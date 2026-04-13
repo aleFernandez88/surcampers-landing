@@ -1,0 +1,146 @@
+/* ============================================================
+   SUR CAMPERS — ANIMATIONS
+   Keyframes, clases de entrada, estados JS
+   ============================================================ */
+
+/* ── KEYFRAMES ────────────────────────────────────── */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes revealLine {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ── CLASES DE ESTADO (manejadas desde JS) ────────── */
+/* Los elementos empiezan invisibles, GSAP / JS los activa */
+
+.js-fade-up,
+.js-fade-in,
+.js-slide-left,
+.js-slide-right,
+.js-scale-in {
+    opacity: 0;
+}
+
+/* Una vez que GSAP completa la animación, queda visible */
+.is-visible {
+    opacity: 1;
+}
+
+/* ── MARQUEE / TICKER (CSS puro) ──────────────────── */
+
+.marquee-track {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* ── TRANSICIÓN PÁGINA (Lenis smooth) ─────────────── */
+
+html.is-loading body {
+    overflow: hidden;
+}
+
+/* ── REDUCE MOTION ────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .marquee-track {
+        animation: none;
+    }
+}

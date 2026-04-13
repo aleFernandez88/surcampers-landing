@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Sur Campers — Atrévete a la aventura</title>
+    <meta
+      name="description"
+      content="Carpas de techo 0km importadas. Dormí donde quieras, viajá sin límites. Sur Campers Uruguay."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.surcampers.uy/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sur Campers — Atrévete a la aventura" />
+    <meta
+      property="og:description"
+      content="Carpas de techo 0km importadas. Dormí donde quieras, viajá sin límites."
+    />
+    <meta property="og:image" content="assets/img/og-image.jpg" />
+    <meta property="og:url" content="https://www.surcampers.uy/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sur Campers — Atrévete a la aventura" />
+    <meta
+      name="twitter:description"
+      content="Carpas de techo 0km importadas. Dormí donde quieras."
+    />
+    <meta name="twitter:image" content="assets/img/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/icons/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Librerías CDN -->
+    <!-- Lenis (smooth scroll) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"
+      defer
+    ></script>
+    <!-- GSAP + ScrollTrigger -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <!-- Splitting.js (animación tipográfica) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting.css"
+    />
+    <script
+      src="https://unpkg.com/splitting/dist/splitting.min.js"
+      defer
+    ></script>
+    <!-- Swiper (galería / productos) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <!-- ── NAVBAR ─────────────────────────────────────── -->
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+      <div class="container navbar__inner">
+        <!-- Logo -->
+        <a href="/" class="navbar__logo" aria-label="Sur Campers — Inicio">
+          <img src="assets/img/icons/logo.svg" alt="Sur Campers" />
+        </a>
+
+        <!-- Links desktop -->
+        <ul class="navbar__links" role="list">
+          <li><a href="#productos" class="navbar__link">Productos</a></li>
+          <li>
+            <a href="#como-funciona" class="navbar__link">Cómo funciona</a>
+          </li>
+          <li><a href="#galeria" class="navbar__link">Galería</a></li>
+          <li><a href="#contacto" class="navbar__link">Contacto</a></li>
+        </ul>
+
+        <!-- CTA desktop -->
+        <div class="navbar__cta">
+          <a
+            href="https://wa.me/59896247661"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contactar por WhatsApp"
+          >
+            WhatsApp
+          </a>
+        </div>
+
+        <!-- Burger móvil -->
+        <button
+          class="navbar__burger"
+          id="burgerBtn"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Menú móvil -->
+    <nav
+      class="navbar__mobile-menu"
+      id="mobileMenu"
+      aria-label="Menú móvil"
+      aria-hidden="true"
+    >
+      <a href="#productos" class="navbar__mobile-link" data-mobile-link
+        >Productos</a
+      >
+      <a href="#como-funciona" class="navbar__mobile-link" data-mobile-link
+        >Cómo funciona</a
+      >
+      <a href="#galeria" class="navbar__mobile-link" data-mobile-link
+        >Galería</a
+      >
+      <a href="#contacto" class="navbar__mobile-link" data-mobile-link
+        >Contacto</a
+      >
+      <a
+        href="https://wa.me/59896247661"
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WhatsApp
+      </a>
+    </nav>
+
+    <main>
+      <!-- ── 01 HERO ───────────────────────────────────── -->
+      <section class="hero" id="hero" aria-label="Hero principal">
+        <!-- Imagen/video de fondo -->
+        <div class="hero__media" aria-hidden="true">
+          <!-- Reemplazar con video propio: -->
+          <!-- <video autoplay muted loop playsinline>
+          <source src="assets/img/hero/hero-video.mp4" type="video/mp4" />
+        </video> -->
+          <img
+            src="assets/img/hero/hero-bg.jpg"
+            alt=""
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <!-- Contenido -->
+        <div class="hero__content container">
+          <span class="eyebrow hero__eyebrow js-fade-in"
+            >Sur Campers Uruguay</span
+          >
+          <h1 class="hero__title js-fade-up" data-splitting>
+            Atrévete a la aventura
+          </h1>
+          <p class="hero__subtitle js-fade-up">
+            Carpas de techo 0km importadas. Dormí donde quieras,<br />
+            viajá sin límites.
+          </p>
+          <div class="hero__actions js-fade-up">
+            <a href="#productos" class="btn btn-primary">Ver productos</a>
+            <a href="#como-funciona" class="btn btn-ghost">Cómo funciona</a>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero__scroll js-fade-in" aria-hidden="true">
+          <span>Scroll</span>
+        </div>
+      </section>
+
+      <!-- ── 02 CONCEPTO ───────────────────────────────── -->
+      <section class="section bg-soft" id="concepto" aria-label="Concepto">
+        <div class="container">
+          <!-- contenido se agrega en la siguiente iteración -->
+        </div>
+      </section>
+
+      <!-- ── 03 PRODUCTOS ──────────────────────────────── -->
+      <section class="section bg-base" id="productos" aria-label="Productos">
+        <div class="container">
+          <!-- contenido se agrega en la siguiente iteración -->
+        </div>
+      </section>
+
+      <!-- ── 04 CÓMO FUNCIONA ──────────────────────────── -->
+      <section
+        class="section bg-cut"
+        id="como-funciona"
+        aria-label="Cómo funciona"
+      >
+        <div class="container">
+          <!-- contenido se agrega en la siguiente iteración -->
+        </div>
+      </section>
+
+      <!-- ── 05 POR QUÉ SUR CAMPERS ───────────────────── -->
+      <section
+        class="section bg-soft"
+        id="por-que"
+        aria-label="Por qué Sur Campers"
+      >
+        <div class="container">
+          <!-- contenido se agrega en la siguiente iteración -->
+        </div>
+      </section>
+
+      <!-- ── 06 GALERÍA ────────────────────────────────── -->
+      <section class="section bg-base" id="galeria" aria-label="Galería">
+        <div class="container">
+          <!-- contenido se agrega en la siguiente iteración -->
+        </div>
+      </section>
+
+      <!-- ── 07 CONTACTO / CTA FINAL ───────────────────── -->
+      <section class="section bg-cut" id="contacto" aria-label="Contacto">
+        <div class="container">
+          <!-- contenido se agrega en la siguiente iteración -->
+        </div>
+      </section>
+    </main>
+
+    <!-- ── FOOTER ─────────────────────────────────────── -->
+    <footer class="footer" aria-label="Pie de página">
+      <div class="container">
+        <div class="footer__grid">
+          <!-- Columna brand -->
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <img src="assets/img/icons/logo.svg" alt="Sur Campers" />
+            </div>
+            <p class="footer__tagline">
+              Carpas de techo 0km. La libertad de dormir donde quieras.
+            </p>
+          </div>
+
+          <!-- Columna productos -->
+          <div>
+            <p class="footer__col-title">Productos</p>
+            <ul class="footer__col-links" role="list">
+              <li>
+                <a href="#productos" class="footer__col-link">Soft Shell</a>
+              </li>
+              <li>
+                <a href="#productos" class="footer__col-link">Hard Shell</a>
+              </li>
+              <li>
+                <a href="#productos" class="footer__col-link">Accesorios</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna empresa -->
+          <div>
+            <p class="footer__col-title">Empresa</p>
+            <ul class="footer__col-links" role="list">
+              <li>
+                <a href="#como-funciona" class="footer__col-link"
+                  >Cómo funciona</a
+                >
+              </li>
+              <li><a href="#galeria" class="footer__col-link">Galería</a></li>
+              <li><a href="#contacto" class="footer__col-link">Contacto</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna contacto -->
+          <div>
+            <p class="footer__col-title">Contacto</p>
+            <ul class="footer__col-links" role="list">
+              <li>
+                <a
+                  href="https://wa.me/59896247661"
+                  class="footer__col-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +598 96 247 661
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:surcampersuruguay@gmail.com"
+                  class="footer__col-link"
+                >
+                  surcampersuruguay@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/"
+                  class="footer__col-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea base -->
+        <div class="footer__bottom">
+          <p class="footer__copy">
+            © <span id="footerYear"></span> Sur Campers Uruguay. Todos los
+            derechos reservados.
+          </p>
+          <div class="footer__socials">
+            <a
+              href="https://www.instagram.com/"
+              class="footer__social-link"
+              target="_blank"
+              rel="noopener"
+              >Instagram</a
+            >
+            <a
+              href="https://www.facebook.com/"
+              class="footer__social-link"
+              target="_blank"
+              rel="noopener"
+              >Facebook</a
+            >
+            <a
+              href="https://wa.me/59896247661"
+              class="footer__social-link"
+              target="_blank"
+              rel="noopener"
+              >WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ── JS ─────────────────────────────────────────── -->
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>
