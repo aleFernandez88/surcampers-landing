@@ -559,6 +559,187 @@
     gap: var(--space-3);
 }
 
+/* ── PRODUCTOS ────────────────────────────────────── */
+
+/* Layout split: 70% contenido claro / 30% imagen */
+.productos {
+    padding-block: 0;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    min-height: 700px;
+    max-height: 90dvh;
+}
+
+/* Columna izquierda — fondo claro */
+.productos__content {
+    background: #efefef;
+    display: flex;
+    align-items: center;
+    padding-block: var(--space-16) var(--space-20);
+}
+
+.productos__inner {
+    width: 100%;
+    max-width: 840px;
+    margin-left: auto;
+    padding-inline: var(--space-8) var(--space-12);
+}
+
+/* Overrides de color para contexto claro */
+.productos__content .eyebrow {
+    color: #888888;
+}
+
+.productos__content .section__title {
+    color: #0a0a0a;
+}
+
+.productos__content .section__description {
+    color: #555555;
+}
+
+.productos__inner .section__header {
+    margin-bottom: 0;
+}
+
+/* Grid de cards */
+.productos__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-10);
+}
+
+/* Imagen más achatada para que las cards entren en el viewport */
+.productos__grid .product-card__media {
+    aspect-ratio: 16 / 9;
+}
+
+/* Cards en contexto claro */
+.productos__content .product-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.productos__content .product-card:hover {
+    border-color: rgba(0, 0, 0, 0.18);
+}
+
+.productos__content .product-card__tag {
+    color: #888888;
+}
+
+.productos__content .product-card__title {
+    color: #0a0a0a;
+}
+
+.productos__content .product-card__desc {
+    color: #555555;
+}
+
+/* Specs */
+.product-card__specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+}
+
+.product-card__specs li {
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: #666666;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+}
+
+/* Botones en contexto claro */
+.productos__content .btn-primary {
+    background: #0a0a0a;
+    border-color: #0a0a0a;
+    color: #f0f0f0;
+}
+
+.productos__content .btn-primary:hover {
+    background: transparent;
+    color: #0a0a0a;
+}
+
+.productos__content .btn-ghost {
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #0a0a0a;
+}
+
+.productos__content .btn-ghost:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Badge sobre la imagen */
+.product-card__badge {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    background: #0a0a0a;
+    color: #f0f0f0;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+}
+
+.product-card__badge--offer {
+    background: transparent;
+    color: #0a0a0a;
+    border: 1px solid #0a0a0a;
+}
+
+/* Columna derecha — imagen que sangra */
+.productos__visual {
+    position: relative;
+    overflow: hidden;
+}
+
+.productos__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .productos {
+        grid-template-columns: 65% 35%;
+    }
+}
+
+@media (max-width: 768px) {
+    .productos {
+        grid-template-columns: 1fr;
+        min-height: unset;
+    }
+
+    .productos__visual {
+        height: 280px;
+        order: -1;
+    }
+
+    .productos__inner {
+        padding-inline: var(--space-5);
+        max-width: 100%;
+    }
+
+    .productos__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+    }
+}
+
 /* ── STEPS / CÓMO FUNCIONA ────────────────────────── */
 
 .step-item {
