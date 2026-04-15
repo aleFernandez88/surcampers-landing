@@ -162,45 +162,168 @@
     </nav>
 
     <main>
-      <!-- ── 01 HERO ───────────────────────────────────── -->
+      <!-- ── 01 HERO SLIDER ───────────────────────────── -->
       <section class="hero" id="hero" aria-label="Hero principal">
-        <!-- Imagen/video de fondo -->
-        <div class="hero__media" aria-hidden="true">
-          <!-- Reemplazar con video propio: -->
-          <!-- <video autoplay muted loop playsinline>
-          <source src="assets/img/hero/hero-video.mp4" type="video/mp4" />
-        </video> -->
-          <img
-            src="assets/img/hero/hero-bg.jpg"
-            alt=""
-            loading="eager"
-            fetchpriority="high"
-          />
-        </div>
-        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="swiper hero-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide hero-slide">
+              <div
+                class="hero-slide__bg"
+                style="
+                  background-image: url(&quot;assets/img/hero/hero-1.jpg&quot;);
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="container">
+                  <span class="eyebrow">Sur Campers Uruguay</span>
+                  <h1 class="hero-slide__title">Atrévete<br />a la aventura</h1>
+                  <p class="hero-slide__subtitle">
+                    Carpas de techo 0km importadas.<br />
+                    Dormí donde quieras, viajá sin límites.
+                  </p>
+                  <div class="hero-slide__actions">
+                    <a href="#productos" class="btn btn-primary"
+                      >Ver productos</a
+                    >
+                    <a href="#como-funciona" class="btn btn-ghost"
+                      >Cómo funciona</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <!-- Contenido -->
-        <div class="hero__content container">
-          <span class="eyebrow hero__eyebrow js-fade-in"
-            >Sur Campers Uruguay</span
+            <!-- Slide 2 -->
+            <div class="swiper-slide hero-slide">
+              <div
+                class="hero-slide__bg"
+                style="
+                  background-image: url(&quot;assets/img/hero/hero-2.jpg&quot;);
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="container">
+                  <span class="eyebrow">Soft Shell & Hard Shell</span>
+                  <h1 class="hero-slide__title">
+                    Unidades<br />0km importadas
+                  </h1>
+                  <p class="hero-slide__subtitle">
+                    Los mejores modelos del mercado,<br />
+                    disponibles en Uruguay.
+                  </p>
+                  <div class="hero-slide__actions">
+                    <a href="#productos" class="btn btn-primary">Ver modelos</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide hero-slide">
+              <div
+                class="hero-slide__bg"
+                style="
+                  background-image: url(&quot;assets/img/hero/hero-3.jpg&quot;);
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="container">
+                  <span class="eyebrow">Libertad total</span>
+                  <h1 class="hero-slide__title">Montá, manejá<br />y dormí</h1>
+                  <p class="hero-slide__subtitle">
+                    Instalación en minutos sobre cualquier vehículo.<br />
+                    Sin límites de destino.
+                  </p>
+                  <div class="hero-slide__actions">
+                    <a href="#como-funciona" class="btn btn-primary"
+                      >Cómo funciona</a
+                    >
+                    <a
+                      href="https://wa.me/59896247661"
+                      class="btn btn-ghost"
+                      target="_blank"
+                      rel="noopener"
+                      >WhatsApp</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /swiper-wrapper -->
+
+          <!-- Flechas de navegación -->
+          <button
+            class="hero-nav hero-nav--prev"
+            id="heroPrev"
+            aria-label="Slide anterior"
           >
-          <h1 class="hero__title js-fade-up" data-splitting>
-            Atrévete a la aventura
-          </h1>
-          <p class="hero__subtitle js-fade-up">
-            Carpas de techo 0km importadas. Dormí donde quieras,<br />
-            viajá sin límites.
-          </p>
-          <div class="hero__actions js-fade-up">
-            <a href="#productos" class="btn btn-primary">Ver productos</a>
-            <a href="#como-funciona" class="btn btn-ghost">Cómo funciona</a>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M15 19l-7-7 7-7"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            class="hero-nav hero-nav--next"
+            id="heroNext"
+            aria-label="Siguiente slide"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 5l7 7-7 7"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
+          <!-- Paginación (bullets) -->
+          <div
+            class="hero-pagination"
+            id="heroPagination"
+            aria-label="Slides"
+          ></div>
+
+          <!-- Contador numérico -->
+          <div class="hero-counter" aria-hidden="true">
+            <span class="hero-counter__current">01</span>
+            <span class="hero-counter__sep"></span>
+            <span class="hero-counter__total">03</span>
+          </div>
+
+          <!-- Scroll indicator -->
+          <div class="hero-scroll" aria-hidden="true">
+            <div class="hero-scroll__line"></div>
+            <span>Scroll</span>
           </div>
         </div>
-
-        <!-- Scroll indicator -->
-        <div class="hero__scroll js-fade-in" aria-hidden="true">
-          <span>Scroll</span>
-        </div>
+        <!-- /swiper -->
       </section>
 
       <!-- ── 02 CONCEPTO ───────────────────────────────── -->
@@ -314,10 +437,14 @@
               </li>
               <li>
                 <a
-                  href="mailto:surcampersuruguay@gmail.com"
+                  href="/cdn-cgi/l/email-protection#9be8eee9f8faf6ebfee9e8eee9eefceefae2dbfcf6faf2f7b5f8f4f6"
                   class="footer__col-link"
                 >
-                  surcampersuruguay@gmail.com
+                  <span
+                    class="__cf_email__"
+                    data-cfemail="afdcdaddcccec2dfcadddcdadddac8daced6efc8c2cec6c381ccc0c2"
+                    >[email&#160;protected]</span
+                  >
                 </a>
               </li>
               <li>
