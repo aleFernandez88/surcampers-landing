@@ -327,9 +327,66 @@
       </section>
 
       <!-- ── 02 CONCEPTO ───────────────────────────────── -->
-      <section class="section bg-soft" id="concepto" aria-label="Concepto">
-        <div class="container">
-          <!-- contenido se agrega en la siguiente iteración -->
+      <section
+        class="section bg-soft concepto"
+        id="concepto"
+        aria-label="Concepto"
+      >
+        <div class="container concepto__inner">
+          <!-- Columna texto -->
+          <div class="concepto__text js-slide-left">
+            <span class="eyebrow">¿Qué es una carpa de techo?</span>
+            <h2 class="concepto__title">
+              Dormí donde<br />el mundo<br />se acaba
+            </h2>
+            <p class="concepto__desc">
+              Una carpa de techo se monta sobre cualquier vehículo en minutos.
+              Sin importar dónde pares — en la playa, en la sierra o en medio de
+              la ruta — abrís la carpa y tenés tu cama lista.
+            </p>
+            <p class="concepto__desc">
+              En Sur Campers importamos unidades 0km con la mejor calidad del
+              mercado, para que tu próxima aventura no tenga límites.
+            </p>
+            <div class="concepto__features">
+              <div class="concepto__feature">
+                <span class="concepto__feature-num">01</span>
+                <span class="concepto__feature-text"
+                  >Instalación en minutos</span
+                >
+              </div>
+              <div class="concepto__feature">
+                <span class="concepto__feature-num">02</span>
+                <span class="concepto__feature-text"
+                  >Compatible con cualquier vehículo</span
+                >
+              </div>
+              <div class="concepto__feature">
+                <span class="concepto__feature-num">03</span>
+                <span class="concepto__feature-text"
+                  >Unidades 0km importadas</span
+                >
+              </div>
+            </div>
+            <a href="#productos" class="btn btn-primary">Ver productos</a>
+          </div>
+
+          <!-- Columna imagen -->
+          <div class="concepto__media js-slide-right">
+            <div class="concepto__img-wrap">
+              <!-- PLACEHOLDER — reemplazar con imagen real -->
+              <img
+                src="assets/img/concepto-placeholder.jpg"
+                alt="Carpa de techo Sur Campers instalada sobre vehículo en paisaje natural"
+                loading="lazy"
+              />
+            </div>
+            <!-- Badge flotante -->
+            <div class="concepto__badge" aria-hidden="true">
+              <span class="concepto__badge-num">0km</span>
+              <span class="concepto__badge-text">Importadas</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -495,6 +552,6 @@
     </footer>
 
     <!-- ── JS ─────────────────────────────────────────── -->
-    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js" defer></script>
   </body>
 </html>
