@@ -964,6 +964,85 @@
     }
 }
 
+/* ── MARCAS ───────────────────────────────────────── */
+
+.marcas__header {
+    margin-bottom: var(--space-16);
+}
+
+.marcas__header .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.eyebrow__line {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+.marcas__title {
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 0.95;
+    margin-top: var(--space-5);
+    color: var(--color-text-primary);
+}
+
+/* Cinta infinita */
+.marcas__ticker {
+    overflow: hidden;
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-block: var(--space-8);
+    margin-top: var(--space-4);
+}
+
+.marcas__track {
+    display: flex;
+    align-items: center;
+    gap: var(--space-20);
+    width: max-content;
+    animation: ticker 24s linear infinite;
+}
+
+.marcas__track:hover {
+    animation-play-state: paused;
+}
+
+.marcas__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: opacity var(--duration-fast) var(--ease-out);
+    filter: grayscale(1) brightness(2);
+}
+
+.marcas__logo:hover {
+    opacity: 1;
+}
+
+.marcas__logo img {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+}
+
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* Respetar prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .marcas__track {
+        animation: none;
+    }
+}
+
 /* ── FOOTER ───────────────────────────────────────── */
 
 .footer {
