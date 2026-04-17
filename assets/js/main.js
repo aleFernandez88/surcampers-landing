@@ -6,6 +6,7 @@
 import { initLenis } from "./lenis.js";
 import { initNavbar } from "./navbar.js";
 import { initAnimations } from "./animations.js";
+import { initHero } from "./hero.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Smooth scroll
@@ -14,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. Navbar (scroll + burger)
   initNavbar();
 
-  // 3. Animaciones GSAP
+  // 3. Hero slider
+  initHero();
+
+  // 4. Animaciones GSAP
   initAnimations();
 
   // 4. Año dinámico en el footer

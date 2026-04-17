@@ -17,7 +17,8 @@ export function initAnimations() {
   if (typeof Splitting !== "undefined") {
     Splitting({ target: "[data-splitting]", by: "chars" });
 
-    const heroChars = document.querySelectorAll(".hero__title .char");
+    // CORREGIDO: Clase del HTML
+    const heroChars = document.querySelectorAll(".hero-slide__title .char");
     if (heroChars.length) {
       gsap.from(heroChars, {
         opacity: 0,
@@ -31,8 +32,8 @@ export function initAnimations() {
     }
   }
 
-  // Eyebrow y subtítulo del hero
-  gsap.from(".hero__eyebrow", {
+  // CORREGIDO: Limitado solo al eyebrow del hero
+  gsap.from(".hero .eyebrow", {
     opacity: 0,
     y: 16,
     duration: 0.8,
@@ -40,7 +41,8 @@ export function initAnimations() {
     delay: 0.1,
   });
 
-  gsap.from(".hero__subtitle", {
+  // CORREGIDO: Clases actualizadas según tu HTML
+  gsap.from(".hero-slide__subtitle", {
     opacity: 0,
     y: 24,
     duration: 0.8,
@@ -48,7 +50,7 @@ export function initAnimations() {
     delay: 0.6,
   });
 
-  gsap.from(".hero__actions", {
+  gsap.from(".hero-slide__actions", {
     opacity: 0,
     y: 24,
     duration: 0.8,
@@ -56,7 +58,7 @@ export function initAnimations() {
     delay: 0.8,
   });
 
-  gsap.from(".hero__scroll", {
+  gsap.from(".hero-scroll", {
     opacity: 0,
     duration: 1,
     ease: "power1.out",
@@ -64,7 +66,8 @@ export function initAnimations() {
   });
 
   // Parallax sutil en la imagen de fondo del hero
-  const heroMedia = document.querySelector(".hero__media");
+  // CORREGIDO: Clase del background del hero
+  const heroMedia = document.querySelector(".hero-slide__bg");
   if (heroMedia) {
     gsap.to(heroMedia, {
       yPercent: 20,
@@ -164,5 +167,12 @@ export function initAnimations() {
     duration: 0.8,
     ease: "power2.out",
     delay: 0.1,
+  });
+
+  // ── EL FIX PARA EL SCROLL ───────────────────────────
+  // Obliga a ScrollTrigger a recalcular todas las posiciones una vez
+  // que las imágenes y recursos externos (como fuentes) hayan cargado.
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
   });
 }

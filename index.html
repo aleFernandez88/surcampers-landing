@@ -91,7 +91,7 @@
       <div class="container navbar__inner">
         <!-- Logo -->
         <a href="/" class="navbar__logo" aria-label="Sur Campers — Inicio">
-          <img src="assets/img/icons/logo.svg" alt="Sur Campers" />
+          <img src="assets/img/icons/logo.png" alt="Sur Campers" />
         </a>
 
         <!-- Links desktop -->
@@ -162,95 +162,508 @@
     </nav>
 
     <main>
-      <!-- ── 01 HERO ───────────────────────────────────── -->
+      <!-- ── 01 HERO SLIDER ───────────────────────────── -->
       <section class="hero" id="hero" aria-label="Hero principal">
-        <!-- Imagen/video de fondo -->
-        <div class="hero__media" aria-hidden="true">
-          <!-- Reemplazar con video propio: -->
-          <!-- <video autoplay muted loop playsinline>
-          <source src="assets/img/hero/hero-video.mp4" type="video/mp4" />
-        </video> -->
-          <img
-            src="assets/img/hero/hero-bg.jpg"
-            alt=""
-            loading="eager"
-            fetchpriority="high"
-          />
-        </div>
-        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="swiper hero-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide hero-slide">
+              <div
+                class="hero-slide__bg"
+                style="
+                  background-image: url(&quot;assets/img/hero/hero-1.jpg&quot;);
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="container">
+                  <span class="eyebrow">Sur Campers Uruguay</span>
+                  <h1 class="hero-slide__title">Atrévete<br />a la aventura</h1>
+                  <p class="hero-slide__subtitle">
+                    Carpas de techo 0km importadas.<br />
+                    Dormí donde quieras, viajá sin límites.
+                  </p>
+                  <div class="hero-slide__actions">
+                    <a href="#productos" class="btn btn-primary"
+                      >Ver productos</a
+                    >
+                    <a href="#como-funciona" class="btn btn-ghost"
+                      >Cómo funciona</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <!-- Contenido -->
-        <div class="hero__content container">
-          <span class="eyebrow hero__eyebrow js-fade-in"
-            >Sur Campers Uruguay</span
+            <!-- Slide 2 -->
+            <div class="swiper-slide hero-slide">
+              <div
+                class="hero-slide__bg"
+                style="
+                  background-image: url(&quot;assets/img/hero/hero-2.jpg&quot;);
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="container">
+                  <span class="eyebrow">Soft Shell & Hard Shell</span>
+                  <h1 class="hero-slide__title">
+                    Unidades<br />0km importadas
+                  </h1>
+                  <p class="hero-slide__subtitle">
+                    Los mejores modelos del mercado,<br />
+                    disponibles en Uruguay.
+                  </p>
+                  <div class="hero-slide__actions">
+                    <a href="#productos" class="btn btn-primary">Ver modelos</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide hero-slide">
+              <div
+                class="hero-slide__bg"
+                style="
+                  background-image: url(&quot;assets/img/hero/hero-3.jpg&quot;);
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="container">
+                  <span class="eyebrow">Libertad total</span>
+                  <h1 class="hero-slide__title">Montá, manejá<br />y dormí</h1>
+                  <p class="hero-slide__subtitle">
+                    Instalación en minutos sobre cualquier vehículo.<br />
+                    Sin límites de destino.
+                  </p>
+                  <div class="hero-slide__actions">
+                    <a href="#como-funciona" class="btn btn-primary"
+                      >Cómo funciona</a
+                    >
+                    <a
+                      href="https://wa.me/59896247661"
+                      class="btn btn-ghost"
+                      target="_blank"
+                      rel="noopener"
+                      >WhatsApp</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /swiper-wrapper -->
+
+          <!-- Flechas de navegación -->
+          <button
+            class="hero-nav hero-nav--prev"
+            id="heroPrev"
+            aria-label="Slide anterior"
           >
-          <h1 class="hero__title js-fade-up" data-splitting>
-            Atrévete a la aventura
-          </h1>
-          <p class="hero__subtitle js-fade-up">
-            Carpas de techo 0km importadas. Dormí donde quieras,<br />
-            viajá sin límites.
-          </p>
-          <div class="hero__actions js-fade-up">
-            <a href="#productos" class="btn btn-primary">Ver productos</a>
-            <a href="#como-funciona" class="btn btn-ghost">Cómo funciona</a>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M15 19l-7-7 7-7"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            class="hero-nav hero-nav--next"
+            id="heroNext"
+            aria-label="Siguiente slide"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 5l7 7-7 7"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
+          <!-- Paginación (bullets) -->
+          <div
+            class="hero-pagination"
+            id="heroPagination"
+            aria-label="Slides"
+          ></div>
+
+          <!-- Contador numérico -->
+          <div class="hero-counter" aria-hidden="true">
+            <span class="hero-counter__current">01</span>
+            <span class="hero-counter__sep"></span>
+            <span class="hero-counter__total">03</span>
+          </div>
+
+          <!-- Scroll indicator -->
+          <div class="hero-scroll" aria-hidden="true">
+            <div class="hero-scroll__line"></div>
+            <span>Scroll</span>
           </div>
         </div>
-
-        <!-- Scroll indicator -->
-        <div class="hero__scroll js-fade-in" aria-hidden="true">
-          <span>Scroll</span>
-        </div>
+        <!-- /swiper -->
       </section>
 
       <!-- ── 02 CONCEPTO ───────────────────────────────── -->
-      <section class="section bg-soft" id="concepto" aria-label="Concepto">
-        <div class="container">
-          <!-- contenido se agrega en la siguiente iteración -->
+      <section
+        class="section bg-soft concepto"
+        id="concepto"
+        aria-label="Concepto"
+      >
+        <div class="container concepto__inner">
+          <!-- Columna texto -->
+          <div class="concepto__text js-slide-left">
+            <span class="eyebrow">¿Qué es una carpa de techo?</span>
+            <h2 class="concepto__title">
+              Dormí donde<br />el mundo<br />se acaba
+            </h2>
+            <p class="concepto__desc">
+              Una carpa de techo se monta sobre cualquier vehículo en minutos.
+              Sin importar dónde pares — en la playa, en la sierra o en medio de
+              la ruta — abrís la carpa y tenés tu cama lista.
+            </p>
+            <p class="concepto__desc">
+              En Sur Campers importamos unidades 0km con la mejor calidad del
+              mercado, para que tu próxima aventura no tenga límites.
+            </p>
+            <div class="concepto__features">
+              <div class="concepto__feature">
+                <span class="concepto__feature-num">01</span>
+                <span class="concepto__feature-text"
+                  >Instalación en minutos</span
+                >
+              </div>
+              <div class="concepto__feature">
+                <span class="concepto__feature-num">02</span>
+                <span class="concepto__feature-text"
+                  >Compatible con cualquier vehículo</span
+                >
+              </div>
+              <div class="concepto__feature">
+                <span class="concepto__feature-num">03</span>
+                <span class="concepto__feature-text"
+                  >Unidades 0km importadas</span
+                >
+              </div>
+            </div>
+            <a href="#productos" class="btn btn-primary">Ver productos</a>
+          </div>
+
+          <!-- Columna imagen -->
+          <div class="concepto__media js-slide-right">
+            <div class="concepto__img-wrap">
+              <!-- PLACEHOLDER — reemplazar con imagen real -->
+              <img
+                src="assets/img/concepto/quality-2.jpg"
+                alt="Carpa de techo Sur Campers instalada sobre vehículo en paisaje natural"
+                loading="lazy"
+              />
+            </div>
+            <!-- Badge flotante -->
+            <div class="concepto__badge" aria-hidden="true">
+              <span class="concepto__badge-num">0km</span>
+              <span class="concepto__badge-text">Importadas</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- ── 03 PRODUCTOS ──────────────────────────────── -->
-      <section class="section bg-base" id="productos" aria-label="Productos">
-        <div class="container">
-          <!-- contenido se agrega en la siguiente iteración -->
+      <section class="section productos" id="productos" aria-label="Productos">
+
+        <!-- Lado izquierdo: contenido claro -->
+        <div class="productos__content">
+          <div class="productos__inner">
+
+            <div class="section__header js-fade-up">
+              <span class="eyebrow">Carpas de techo</span>
+              <h2 class="section__title">Nuestros modelos</h2>
+              <p class="section__description">
+                Unidades 0km importadas, listas para montar<br>sobre cualquier vehículo.
+              </p>
+            </div>
+
+            <div class="productos__grid" data-stagger>
+
+              <!-- Card 1 — Más vendidos -->
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="assets/img/productos/quality.jpg"
+                    alt="Carpa de techo Sur Campers — Más vendida"
+                    loading="lazy"
+                  />
+                  <span class="product-card__badge">Más vendido</span>
+                </div>
+                <div class="product-card__body">
+                  <span class="product-card__tag">Modelo destacado</span>
+                  <h3 class="product-card__title">La más elegida</h3>
+                  <p class="product-card__desc">
+                    El modelo que más sale. Resistente, cómoda y fácil de instalar.
+                  </p>
+                  <ul class="product-card__specs">
+                    <li>Aluminio aeronáutico</li>
+                    <li>2 personas</li>
+                    <li>Instalación en 5 min</li>
+                  </ul>
+                  <a
+                    href="https://wa.me/59896247661?text=Hola%2C%20me%20interesa%20el%20modelo%20m%C3%A1s%20vendido.%20%C2%BFPod%C3%A9s%20darme%20m%C3%A1s%20info%3F"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Consultar por WhatsApp
+                  </a>
+                </div>
+              </article>
+
+              <!-- Card 2 — Ofertas -->
+              <article class="product-card">
+                <div class="product-card__media">
+                  <img
+                    src="assets/img/productos/benefits.jpg"
+                    alt="Carpa de techo Sur Campers — Oferta"
+                    loading="lazy"
+                  />
+                  <span class="product-card__badge product-card__badge--offer">Oferta</span>
+                </div>
+                <div class="product-card__body">
+                  <span class="product-card__tag">Precio especial</span>
+                  <h3 class="product-card__title">Oportunidad única</h3>
+                  <p class="product-card__desc">
+                    Stock limitado al mejor precio del mercado uruguayo.
+                  </p>
+                  <ul class="product-card__specs">
+                    <li>Stock limitado</li>
+                    <li>2 personas</li>
+                    <li>Entrega inmediata</li>
+                  </ul>
+                  <a
+                    href="https://wa.me/59896247661?text=Hola%2C%20quiero%20ver%20las%20ofertas%20disponibles.%20%C2%BFQu%C3%A9%20tienen%3F"
+                    class="btn btn-ghost"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver oferta disponible
+                  </a>
+                </div>
+              </article>
+
+            </div>
+            <!-- /productos__grid -->
+
+          </div>
         </div>
+
+        <!-- Lado derecho: imagen -->
+        <div class="productos__visual" aria-hidden="true">
+          <img
+            src="assets/img/productos/quality.jpg"
+            alt=""
+          />
+        </div>
+
       </section>
 
       <!-- ── 04 CÓMO FUNCIONA ──────────────────────────── -->
       <section
-        class="section bg-cut"
+        class="section bg-cut como-funciona"
         id="como-funciona"
         aria-label="Cómo funciona"
       >
         <div class="container">
-          <!-- contenido se agrega en la siguiente iteración -->
+
+          <div class="section__header text-center js-fade-up">
+            <span class="eyebrow">En tres pasos</span>
+            <h2 class="section__title">Cómo funciona</h2>
+          </div>
+
+          <div class="steps" data-stagger>
+
+            <!-- Paso 1 -->
+            <div class="step">
+              <span class="step__number">01</span>
+              <div class="step__body">
+                <h3 class="step__title">Montá</h3>
+                <p class="step__desc">
+                  Instalación en minutos sobre cualquier barra de techo. Sin herramientas especiales, sin modificar el vehículo.
+                </p>
+              </div>
+            </div>
+
+            <!-- Separador -->
+            <div class="step__divider" aria-hidden="true"></div>
+
+            <!-- Paso 2 -->
+            <div class="step">
+              <span class="step__number">02</span>
+              <div class="step__body">
+                <h3 class="step__title">Manejá</h3>
+                <p class="step__desc">
+                  La carpa va cerrada y aerodinámica sobre el techo. Llegá a donde quieras — playa, sierra o ruta.
+                </p>
+              </div>
+            </div>
+
+            <!-- Separador -->
+            <div class="step__divider" aria-hidden="true"></div>
+
+            <!-- Paso 3 -->
+            <div class="step">
+              <span class="step__number">03</span>
+              <div class="step__body">
+                <h3 class="step__title">Dormí</h3>
+                <p class="step__desc">
+                  Abrís en segundos y tenés tu cama lista. Colchón incluido, vista al cielo opcional.
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <!-- /steps -->
+
         </div>
       </section>
 
       <!-- ── 05 POR QUÉ SUR CAMPERS ───────────────────── -->
       <section
-        class="section bg-soft"
+        class="por-que"
         id="por-que"
         aria-label="Por qué Sur Campers"
       >
-        <div class="container">
-          <!-- contenido se agrega en la siguiente iteración -->
+        <!-- Imagen de fondo — PLACEHOLDER, reemplazar el viernes -->
+        <div
+          class="por-que__bg"
+          style="background-image: url('assets/img/hero/hero-1.jpg')"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Overlay degradé horizontal -->
+        <div class="por-que__overlay" aria-hidden="true"></div>
+
+        <!-- Contenido -->
+        <div class="container por-que__content js-fade-up">
+          <span class="eyebrow">Por qué elegirnos</span>
+          <h2 class="por-que__title">Calidad sin<br>compromisos</h2>
+          <p class="por-que__desc">
+            Importamos directamente las mejores carpas de techo del mercado.<br>
+            0km, con garantía, y respaldo post-venta en Uruguay.
+          </p>
+          <a
+            href="https://wa.me/59896247661?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Sur%20Campers."
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contactar ahora
+          </a>
         </div>
+
       </section>
 
       <!-- ── 06 GALERÍA ────────────────────────────────── -->
-      <section class="section bg-base" id="galeria" aria-label="Galería">
+      <section class="section bg-base galeria" id="galeria" aria-label="Galería">
         <div class="container">
-          <!-- contenido se agrega en la siguiente iteración -->
+
+          <div class="section__header js-fade-up">
+            <span class="eyebrow">Lifestyle</span>
+            <h2 class="section__title">En la ruta</h2>
+          </div>
+
+          <!-- Grid masonry manual — PLACEHOLDERS, reemplazar el viernes -->
+          <div class="galeria__grid">
+
+            <div class="galeria__item galeria__item--tall">
+              <img src="assets/img/productos/quality.jpg" alt="Carpa de techo Sur Campers en paisaje natural" loading="lazy" />
+            </div>
+
+            <div class="galeria__item">
+              <img src="assets/img/concepto/quality-2.jpg" alt="Detalle carpa de techo Sur Campers" loading="lazy" />
+            </div>
+
+            <div class="galeria__item galeria__item--tall">
+              <img src="assets/img/productos/benefits.jpg" alt="Aventura con carpa de techo Sur Campers" loading="lazy" />
+            </div>
+
+            <div class="galeria__item">
+              <img src="assets/img/concepto/quality-2.jpg" alt="Instalación de carpa de techo" loading="lazy" />
+            </div>
+
+            <div class="galeria__item galeria__item--wide">
+              <img src="assets/img/productos/benefits.jpg" alt="Viaje con carpa de techo Sur Campers" loading="lazy" />
+            </div>
+
+            <div class="galeria__item">
+              <img src="assets/img/productos/quality.jpg" alt="Sur Campers Uruguay" loading="lazy" />
+            </div>
+
+          </div>
+          <!-- /galeria__grid -->
+
         </div>
       </section>
 
-      <!-- ── 07 CONTACTO / CTA FINAL ───────────────────── -->
-      <section class="section bg-cut" id="contacto" aria-label="Contacto">
+      <!-- ── 07 MARCAS ─────────────────────────────────── -->
+      <section class="section bg-base marcas" id="marcas" aria-label="Marcas">
         <div class="container">
-          <!-- contenido se agrega en la siguiente iteración -->
+          <div class="marcas__header js-fade-up">
+            <span class="eyebrow">
+              <span class="eyebrow__line" aria-hidden="true"></span>
+              Marcas
+            </span>
+            <h2 class="marcas__title">Las marcas más<br>reconocidas nos<br>acompañan</h2>
+          </div>
         </div>
+
+        <!-- Cinta infinita — fuera del container para ir de borde a borde -->
+        <!-- 4 sets idénticos: la animación viaja -50% (2 sets), siempre hay logos cubriendo el viewport -->
+        <div class="marcas__ticker" aria-hidden="true">
+          <div class="marcas__track">
+            <!-- Set 1 -->
+            <div class="marcas__logo"><img src="assets/img/marcas/dome-logo.png" alt="Dometic" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/LogoRetina.png" alt="Logo marca" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/logo-w.svg" alt="Logo marca" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/st-logo.svg" alt="Logo marca" /></div>
+            <!-- Set 2 -->
+            <div class="marcas__logo"><img src="assets/img/marcas/dome-logo.png" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/LogoRetina.png" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/logo-w.svg" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/st-logo.svg" alt="" /></div>
+            <!-- Set 3 -->
+            <div class="marcas__logo"><img src="assets/img/marcas/dome-logo.png" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/LogoRetina.png" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/logo-w.svg" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/st-logo.svg" alt="" /></div>
+            <!-- Set 4 -->
+            <div class="marcas__logo"><img src="assets/img/marcas/dome-logo.png" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/LogoRetina.png" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/logo-w.svg" alt="" /></div>
+            <div class="marcas__logo"><img src="assets/img/marcas/st-logo.svg" alt="" /></div>
+          </div>
+        </div>
+
       </section>
     </main>
 
@@ -314,10 +727,14 @@
               </li>
               <li>
                 <a
-                  href="mailto:surcampersuruguay@gmail.com"
+                  href="/cdn-cgi/l/email-protection#9be8eee9f8faf6ebfee9e8eee9eefceefae2dbfcf6faf2f7b5f8f4f6"
                   class="footer__col-link"
                 >
-                  surcampersuruguay@gmail.com
+                  <span
+                    class="__cf_email__"
+                    data-cfemail="afdcdaddcccec2dfcadddcdadddac8daced6efc8c2cec6c381ccc0c2"
+                    >[email&#160;protected]</span
+                  >
                 </a>
               </li>
               <li>
@@ -368,6 +785,6 @@
     </footer>
 
     <!-- ── JS ─────────────────────────────────────────── -->
-    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js" defer></script>
   </body>
 </html>

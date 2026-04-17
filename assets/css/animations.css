@@ -103,7 +103,7 @@
 .js-slide-left,
 .js-slide-right,
 .js-scale-in {
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 /* Una vez que GSAP completa la animación, queda visible */
