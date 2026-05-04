@@ -14,6 +14,10 @@
     /* negro suave */
     --color-bg-cut: #1c1c1c;
     /* corte de sección */
+    --color-bg-mid: #2d2d2d;
+    /* gris medio — variante de marca */
+    --color-bg-slate: #526072;
+    /* azul-gris de marca — secciones de contraste */
     --color-bg-card: #161616;
     /* fondo de cards */
     --color-bg-surface: #222222;
@@ -34,9 +38,16 @@
     --color-border-light: rgba(255, 255, 255, 0.12);
     --color-border-medium: rgba(255, 255, 255, 0.20);
 
-    /* Acento (blanco — usado solo en CTAs y detalles clave) */
-    --color-accent: #ffffff;
-    --color-accent-hover: #f0f0f0;
+    /* Acento — amber dorado de marca Sur Campers */
+    --color-accent: #C89020;
+    --color-accent-hover: #E0A82A;
+    --color-accent-muted: rgba(200, 144, 32, 0.12);
+    --color-accent-border: rgba(200, 144, 32, 0.30);
+
+    /* Slate — azul-gris de marca Sur Campers */
+    --color-slate: #3D4B5C;
+    --color-slate-soft: #4A5A6B;
+    --color-slate-muted: rgba(61, 75, 92, 0.40);
 
     /* ── TIPOGRAFÍA ──────────────────────────────────── */
 
