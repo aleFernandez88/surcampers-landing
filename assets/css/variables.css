@@ -39,10 +39,10 @@
     --color-border-medium: rgba(255, 255, 255, 0.20);
 
     /* Acento — amber dorado de marca Sur Campers */
-    --color-accent: #C89020;
-    --color-accent-hover: #E0A82A;
-    --color-accent-muted: rgba(200, 144, 32, 0.12);
-    --color-accent-border: rgba(200, 144, 32, 0.30);
+    --color-accent: #ffaa4d;
+    --color-accent-hover: #ffbc70;
+    --color-accent-muted: rgba(255, 170, 77, 0.12);
+    --color-accent-border: rgba(255, 170, 77, 0.30);
 
     /* Slate — azul-gris de marca Sur Campers */
     --color-slate: #3D4B5C;
