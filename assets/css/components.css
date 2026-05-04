@@ -705,12 +705,9 @@ a.product-card {
     max-width: 32ch;
 }
 
-/* Separador vertical entre pasos */
+/* Separador vertical entre pasos — oculto */
 .step__divider {
-    width: 1px;
-    background: var(--color-accent-border);
-    align-self: stretch;
-    margin-top: var(--space-8);
+    display: none;
 }
 
 /* Responsive */
@@ -914,8 +911,6 @@ a.product-card {
 /* Cinta infinita */
 .marcas__ticker {
     overflow: hidden;
-    border-top: 1px solid var(--color-accent-border);
-    border-bottom: 1px solid var(--color-accent-border);
     padding-block: var(--space-8);
     margin-top: var(--space-4);
 }
@@ -1137,20 +1132,45 @@ a.product-card {
 
 .footer__socials {
     display: flex;
-    gap: var(--space-4);
+    align-items: center;
+    gap: var(--space-3);
 }
 
 .footer__social-link {
-    font-size: var(--fs-xs);
-    letter-spacing: var(--ls-wide);
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    transition: color var(--duration-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-cut);
+    transition:
+        transform var(--duration-fast) var(--ease-out),
+        background var(--duration-fast),
+        color var(--duration-fast);
+}
+
+.footer__social-link svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
 .footer__social-link:hover {
-    color: var(--color-text-primary);
+    transform: translateY(-3px);
 }
+
+.footer__social-link--instagram { color: #E4405F; }
+.footer__social-link--instagram:hover { background: #E4405F; color: #fff; }
+
+.footer__social-link--facebook { color: #1877F2; }
+.footer__social-link--facebook:hover { background: #1877F2; color: #fff; }
+
+.footer__social-link--youtube { color: #FF0000; }
+.footer__social-link--youtube:hover { background: #FF0000; color: #fff; }
+
+.footer__social-link--threads { color: var(--color-text-primary); }
+.footer__social-link--threads:hover { background: var(--color-text-primary); color: var(--color-bg-base); }
 
 @media (max-width: 1024px) {
     .footer__grid {
