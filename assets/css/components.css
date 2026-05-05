@@ -603,6 +603,7 @@ a.product-card {
 /* Imagen más compacta en este contexto */
 .productos .product-card__media {
     aspect-ratio: none;
+    width: 100%;
     height: 220px;
 }
 
