@@ -941,9 +941,13 @@ a.product-card {
 }
 
 .marcas__logo img {
-    height: 56px;
-    width: auto;
+    width: 180px;
+    height: auto;
     object-fit: contain;
+}
+
+.marcas__logo--invert img {
+    filter: brightness(0) invert(1);
 }
 
 @keyframes ticker {
