@@ -1086,7 +1086,7 @@ a.product-card {
 }
 
 .footer__logo img {
-    height: 32px;
+    height: 88px;
     margin-bottom: var(--space-4);
 }
 
@@ -1101,7 +1101,7 @@ a.product-card {
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-widest);
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: #f0c848;
     margin-bottom: var(--space-4);
 }
 
@@ -1120,6 +1120,38 @@ a.product-card {
 .footer__col-link:hover {
     color: var(--color-text-primary);
 }
+
+.footer__col-socials {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.footer__col-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-light);
+    color: var(--color-text-secondary);
+    transition: color var(--duration-fast), background var(--duration-fast), border-color var(--duration-fast), transform var(--duration-fast);
+}
+
+.footer__col-social-link svg {
+    width: 22px;
+    height: 22px;
+}
+
+.footer__col-social-link:hover {
+    transform: translateY(-2px);
+}
+
+.footer__col-social-link--instagram:hover { background: #E4405F; color: #fff; border-color: #E4405F; }
+.footer__col-social-link--facebook:hover  { background: #1877F2; color: #fff; border-color: #1877F2; }
+.footer__col-social-link--youtube:hover   { background: #FF0000; color: #fff; border-color: #FF0000; }
+.footer__col-social-link--threads:hover   { background: var(--color-text-primary); color: var(--color-bg-base); border-color: var(--color-text-primary); }
 
 .footer__bottom {
     display: flex;
