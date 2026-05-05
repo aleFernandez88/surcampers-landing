@@ -165,11 +165,11 @@ section {
     margin-bottom: var(--space-6);
 }
 
-.eyebrow:not(.eyebrow--bar) {
+.hero .eyebrow {
     position: relative;
 }
 
-.eyebrow:not(.eyebrow--bar)::before {
+.hero .eyebrow::before {
     content: '';
     position: absolute;
     inset: -6px -10px;
