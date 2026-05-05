@@ -32,31 +32,9 @@ export function initAnimations() {
     }
   }
 
-  // CORREGIDO: Limitado solo al eyebrow del hero
-  gsap.from(".hero .eyebrow", {
-    opacity: 0,
-    y: 16,
-    duration: 0.8,
-    ease: "power2.out",
-    delay: 0.1,
-  });
-
-  // CORREGIDO: Clases actualizadas según tu HTML
-  gsap.from(".hero-slide__subtitle", {
-    opacity: 0,
-    y: 24,
-    duration: 0.8,
-    ease: "power2.out",
-    delay: 0.6,
-  });
-
-  gsap.from(".hero-slide__actions", {
-    opacity: 0,
-    y: 24,
-    duration: 0.8,
-    ease: "power2.out",
-    delay: 0.8,
-  });
+  // eyebrow, subtitle y actions del hero los maneja el CSS
+  // via .swiper-slide-active — no tocar con GSAP o el inline
+  // style sobreescribe la transición en slides 2 y 3.
 
   gsap.from(".hero-scroll", {
     opacity: 0,
