@@ -165,6 +165,20 @@ section {
     margin-bottom: var(--space-6);
 }
 
+.eyebrow:not(.eyebrow--bar) {
+    position: relative;
+}
+
+.eyebrow:not(.eyebrow--bar)::before {
+    content: '';
+    position: absolute;
+    inset: -6px -10px;
+    background: url('../img/tools/mancha-marron.png') center / 100% 100% no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
 /* ── BOTONES ──────────────────────────────────────── */
 
 .btn {
