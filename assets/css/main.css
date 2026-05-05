@@ -202,6 +202,18 @@ section {
     color: var(--color-accent);
 }
 
+.btn-whatsapp {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-text-inverse);
+}
+
+.btn-whatsapp:hover {
+    background-color: #25D366;
+    border-color: #25D366;
+    color: #ffffff;
+}
+
 .btn-ghost {
     background-color: transparent;
     color: var(--color-text-primary);
