@@ -590,6 +590,12 @@ a.product-card {
     color: inherit;
 }
 
+/* Imagen más compacta en este contexto */
+.productos .product-card__media {
+    aspect-ratio: none;
+    height: 220px;
+}
+
 /* Cards en contexto claro */
 .productos .product-card {
     background: #ffffff;
