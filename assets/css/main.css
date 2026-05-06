@@ -179,6 +179,13 @@ section {
     opacity: 0.85;
 }
 
+.concepto .eyebrow,
+.por-que__content .eyebrow,
+.marcas__header .eyebrow,
+.contacto .eyebrow {
+    color: var(--color-text-secondary);
+}
+
 /* ── BOTONES ──────────────────────────────────────── */
 
 .btn {
