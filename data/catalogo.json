@@ -8,37 +8,41 @@
     "base": "Mercedes-Benz Sprinter W907/910",
     "capacidad_personas": 4,
     "capacidad_dormir": 6,
+    "descripcion": "Con gran entusiasmo, presentamos en Uruguay a Julia Camper, una marca que ha revolucionado la movilidad para los amantes del deporte y la aventura desde 1999 en España. Nacida de la pasión por recorrer largas distancias con comodidad y eficiencia, Julia Camper se ha consolidado como líder en la fabricación de campers que satisfacen las necesidades de los usuarios más exigentes. Nos enorgullece presentar la Yosemite, un vehículo premium con base Mercedes que redefine los estándares de seguridad, confort y conectividad. Diseñado para superar sus máximas expectativas, ofrece una experiencia de viaje incomparable en su categoría.",
     "dimensiones": {
       "largo_cm": 593,
       "ancho_cm": 206,
-      "alto_cm": 280,
-      "nota": "Alto variable según suspensión y accesorios"
+      "alto_cm": 285
     },
     "peso": {
-      "mtpm_kg": 4100,
-      "nota": "3500–4100 kg según configuración"
+      "propio_kg": 3500,
+      "mtpm_kg": 4100
     },
     "motor": {
-      "tipo": "2.0 CDI",
+      "tipo": "2.0 CDI 140 kW (190 CV)",
       "potencia_hp": 190,
       "norma": "Euro 6d",
-      "transmision": "9G-Tronic automática",
-      "traccion": "4x4 con control de par"
+      "transmision": "9G-TRONIC automática",
+      "traccion": "4x4 permanente · Torque on demand",
+      "suspension": "Suspensión específica 4x4"
     },
     "equipamiento": {
-      "cama": "Eléctrica 197×140 cm",
-      "calefaccion": "Truma Combi Diesel iNet 4D",
-      "refrigerador": "Thetford 90L",
-      "cocina": "2 quemadores",
-      "bano": "Con ducha integrada",
+      "cama": "Superior eléctrica 1,20×2,00 m · Inferior 1,40×1,98 m",
+      "calefaccion": "Truma Combi D6",
+      "refrigerador": "Compresor 90 L",
+      "cocina": "2 fuegos a gas",
+      "bano": "Con ducha extensible + WC cajón extraíble",
       "agua_limpia_l": 150,
       "agua_gris_l": 75,
       "deposito_combustible_l": 93,
-      "energia": "Paneles solares configurables + baterías de litio",
-      "multimedia": "MBUX 10.25\""
+      "energia": "Placa solar mono 180 W MTTP · Pre-instalación litio",
+      "multimedia": "MBUX 10.5\" · Navegador · Carplay · Cámara 360°",
+      "confort": "Thermotronic · Distronic · Asientos calefactados · Volante en piel",
+      "seguridad": "Faros LED High Performance · Isofix 2 plazas · Tempormat",
+      "exterior": "Techo elevable · Ensanchamientos carbono · Llantas off-road · Snorkel · Luces LAZER · Porta-ruedas trasero",
+      "tapizeria": "Tapicerías exclusivas en piel natural"
     },
-    "precio_eur": 104950,
-    "precio_nota": "Excluidos impuestos, configuración base",
+    "precio_eur": null,
     "colores": null,
     "link_oficial": "https://juliacamper.com/en_GB/yosemite",
     "imagen_carpeta": "julia",

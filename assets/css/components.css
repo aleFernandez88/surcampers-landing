@@ -1505,13 +1505,25 @@ a.product-card {
 .unidad-detail-banner__back:hover { color: var(--color-text-primary); }
 
 .unidad-detail-banner__marca {
-    color: var(--color-accent);
+    color: var(--color-text-inverse);
     font-size: var(--fs-xs);
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-widest);
     text-transform: uppercase;
-    display: block;
-    margin-bottom: var(--space-2);
+    display: inline-block;
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 0;
+}
+
+.unidad-detail-banner__marca::before {
+    content: '';
+    position: absolute;
+    inset: -5px -12px;
+    background: url('../img/tools/mancha-marron.png') center / 100% 100% no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.9;
 }
 
 .unidad-detail-banner__title {
@@ -1531,18 +1543,27 @@ a.product-card {
     text-transform: uppercase;
 }
 
+/* ── UNIDAD INTRO DESCRIPTION ────────────────────── */
+
+.unidad-intro__text {
+    font-size: var(--fs-lg);
+    line-height: var(--lh-loose);
+    color: var(--color-text-secondary);
+    max-width: 72ch;
+}
+
 /* ── UNIDAD TABS BLOCK ────────────────────────────── */
 
 .unidad-tabs {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border-subtle);
+    background: var(--color-bg-slate);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     margin-block: var(--space-16);
 }
 
 .unidad-tabs__nav {
     display: flex;
-    border-bottom: 1px solid var(--color-border-subtle);
-    background: var(--color-bg-surface);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    background: var(--color-slate);
     overflow-x: auto;
     scrollbar-width: none;
 }
@@ -1557,7 +1578,7 @@ a.product-card {
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: rgba(240, 240, 240, 0.55);
     background: transparent;
     border: none;
     border-bottom: 2px solid transparent;
@@ -1574,9 +1595,9 @@ a.product-card {
 }
 
 .unidad-tab-btn.active {
-    color: var(--color-accent);
+    color: var(--color-text-inverse);
     border-bottom-color: var(--color-accent);
-    background: var(--color-accent-muted);
+    background: var(--color-accent);
 }
 
 .unidad-tabs__content {
@@ -1616,10 +1637,10 @@ a.product-card {
     gap: var(--space-3);
     align-items: flex-start;
     font-size: var(--fs-sm);
-    color: var(--color-text-secondary);
+    color: rgba(240, 240, 240, 0.82);
     line-height: var(--lh-normal);
     padding-block: var(--space-3);
-    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .unidad-tab__item::before {
@@ -1638,11 +1659,11 @@ a.product-card {
     align-items: baseline;
     gap: var(--space-6);
     padding-block: var(--space-3);
-    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     font-size: var(--fs-sm);
 }
 
-.unidad-tab__spec-label { color: var(--color-text-muted); flex-shrink: 0; }
+.unidad-tab__spec-label { color: rgba(240, 240, 240, 0.50); flex-shrink: 0; }
 
 .unidad-tab__spec-value {
     color: var(--color-text-primary);
@@ -1652,7 +1673,7 @@ a.product-card {
 
 .unidad-tab__consultar {
     font-size: var(--fs-sm);
-    color: var(--color-text-muted);
+    color: rgba(240, 240, 240, 0.50);
     font-style: italic;
     padding-top: var(--space-4);
 }

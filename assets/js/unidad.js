@@ -123,13 +123,13 @@ function tabEspecificaciones(u) {
   if (m.norma)        rows.push(['Norma',       m.norma]);
   if (m.transmision)  rows.push(['Transmisión', m.transmision]);
   if (m.traccion)     rows.push(['Tracción',    m.traccion]);
+  if (m.suspension)   rows.push(['Suspensión',  m.suspension]);
   if (e.chasis)       rows.push(['Chasis',      e.chasis]);
   if (e.suspension)   rows.push(['Suspensión',  e.suspension]);
   if (e.neumaticos)   rows.push(['Neumáticos',  e.neumaticos]);
   if (e.bateria)      rows.push(['Batería',     e.bateria]);
   if (e.energia)      rows.push(['Energía',     e.energia]);
   if (e.acoplamiento) rows.push(['Acoplamiento',e.acoplamiento]);
-  if (u.precio_eur)   rows.push(['Precio',      `€ ${u.precio_eur.toLocaleString('es-ES')}`]);
 
   const content = rows.length
     ? rows.map(([l, v]) => `
@@ -155,7 +155,7 @@ function galleryHTML(u) {
   }).join('');
 
   return `
-    <section class="section unidad-gallery">
+    <section class="section bg-slate unidad-gallery">
       <div class="container">
         <div class="unidad-gallery__header js-fade-up">
           <h2 class="unidad-gallery__title">Galería</h2>
@@ -219,8 +219,16 @@ function renderUnidad(u) {
       </div>
     </section>
 
+    <!-- Descripción -->
+    ${u.descripcion ? `
+    <section class="section bg-soft unidad-intro" style="padding-top:0;">
+      <div class="container">
+        <p class="unidad-intro__text js-fade-up">${u.descripcion}</p>
+      </div>
+    </section>` : ''}
+
     <!-- Tabs -->
-    <section class="section" style="padding-bottom:0;">
+    <section class="section bg-soft" style="padding-top:0;">
       <div class="container">
         <div class="unidad-tabs">
           <nav class="unidad-tabs__nav" role="tablist" aria-label="Secciones de la unidad">
