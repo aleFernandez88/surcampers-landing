@@ -1,6 +1,6 @@
 /* ============================================================
    SUR CAMPERS — UNIDAD.JS
-   Renderiza el detalle de una unidad a partir de ?id=xxx
+   Detalle dinámico con tabs: Exterior / Interior / Equipamiento / Especificaciones
    ============================================================ */
 
 const TIPO_LABELS = {
@@ -8,8 +8,6 @@ const TIPO_LABELS = {
   trailer:      'Trailer',
   'food-truck': 'Food Truck',
 };
-
-const PLACEHOLDER = 'assets/img/hero/hero-1.jpg';
 
 const PLACEHOLDERS = {
   julia:    'assets/img/galeria/galeria-1.jpg',
@@ -19,122 +17,229 @@ const PLACEHOLDERS = {
   mactrail: 'assets/img/galeria/galeria-5.jpg',
 };
 
-function specsRows(u) {
+const GALLERY_FALLBACKS = [
+  'assets/img/galeria/galeria-1.jpg',
+  'assets/img/galeria/galeria-2.jpg',
+  'assets/img/galeria/galeria-3.jpg',
+  'assets/img/galeria/galeria-4.jpg',
+];
+
+function imgSrc(u) {
+  return `assets/img/unidades/${u.imagen_carpeta}/cover.jpg`;
+}
+
+function fallback(u) {
+  return PLACEHOLDERS[u.imagen_carpeta] || GALLERY_FALLBACKS[0];
+}
+
+function imgWithFallback(src, fb, alt) {
+  return `<img src="${src}" alt="${alt}" loading="lazy" data-fallback="${fb}" />`;
+}
+
+// ── TABS ─────────────────────────────────────────────
+
+function tabExterior(u) {
   const rows = [];
+  const d    = u.dimensiones;
 
-  if (u.tipo)                     rows.push(['Tipo',         TIPO_LABELS[u.tipo] || u.tipo]);
-  if (u.subtipo)                  rows.push(['Subtipo',      u.subtipo]);
-  if (u.base)                     rows.push(['Base',         u.base]);
-  if (u.capacidad_personas)       rows.push(['Capacidad',    `${u.capacidad_personas} personas`]);
-  if (u.capacidad_dormir)         rows.push(['Camas',        `${u.capacidad_dormir} personas`]);
+  if (u.subtipo)          rows.push(['Subtipo',    u.subtipo]);
+  if (u.base)             rows.push(['Base',       u.base]);
+  if (d?.largo_cm)        rows.push(['Largo',      `${(d.largo_cm / 100).toFixed(2)} m`]);
+  if (d?.ancho_cm)        rows.push(['Ancho',      `${(d.ancho_cm / 100).toFixed(2)} m`]);
+  if (d?.alto_cm)         rows.push(['Alto',       `${(d.alto_cm  / 100).toFixed(2)} m`]);
+  if (d?.altura_interior_cm) rows.push(['Alt. interior', `${(d.altura_interior_cm / 100).toFixed(2)} m`]);
+  if (u.peso?.propio_kg)  rows.push(['Peso propio', `${u.peso.propio_kg} kg`]);
+  if (u.peso?.mtpm_kg)    rows.push(['Peso máx.',  `${u.peso.mtpm_kg} kg`]);
 
-  if (u.dimensiones) {
-    const d = u.dimensiones;
-    if (d.largo_cm)  rows.push(['Largo',   `${(d.largo_cm / 100).toFixed(2)} m`]);
-    if (d.ancho_cm)  rows.push(['Ancho',   `${(d.ancho_cm / 100).toFixed(2)} m`]);
-    if (d.alto_cm)   rows.push(['Alto',    `${(d.alto_cm  / 100).toFixed(2)} m`]);
-  }
+  const content = rows.length
+    ? rows.map(([l, v]) => `
+        <div class="unidad-tab__spec-row">
+          <span class="unidad-tab__spec-label">${l}</span>
+          <span class="unidad-tab__spec-value">${v}</span>
+        </div>`).join('')
+    : `<p class="unidad-tab__consultar">Dimensiones disponibles próximamente. Consultanos por WhatsApp.</p>`;
 
-  if (u.peso?.mtpm_kg)             rows.push(['Peso máx.',   `${u.peso.mtpm_kg} kg`]);
-  else if (u.peso?.propio_kg)      rows.push(['Peso propio', `${u.peso.propio_kg} kg`]);
-
-  if (u.motor?.potencia_hp)        rows.push(['Motor',       `${u.motor.potencia_hp} HP`]);
-  if (u.motor?.transmision)        rows.push(['Transmisión', u.motor.transmision]);
-
-  if (u.precio_eur)                rows.push(['Precio',      `€ ${u.precio_eur.toLocaleString('es-ES')}`]);
-
-  return rows
-    .map(([label, val]) => `
-      <div class="unidad-detail__spec-row">
-        <span class="unidad-detail__spec-label">${label}</span>
-        <span class="unidad-detail__spec-value">${val}</span>
-      </div>`)
-    .join('');
+  return { left: `<span class="unidad-tab__eyebrow">Dimensiones y carrocería</span>${content}` };
 }
 
-function equipItems(equip) {
-  if (!equip) return '';
-  const items = Object.entries(equip)
-    .filter(([, v]) => v !== null)
-    .map(([, v]) => `<li class="unidad-equip__item">${v}</li>`);
-  return items.length
-    ? `<ul class="unidad-equip__grid" style="list-style:none;padding:0;">${items.join('')}</ul>`
-    : '';
+function tabInterior(u) {
+  const e = u.equipamiento || {};
+  const INTERIOR_KEYS = ['cama', 'cocina', 'bano', 'refrigerador', 'calefaccion',
+                         'agua_caliente', 'agua_limpia_l', 'agua_gris_l', 'agua_negra_l'];
+
+  const items = INTERIOR_KEYS
+    .filter(k => e[k] != null)
+    .map(k => {
+      const labels = {
+        cama:          'Cama',
+        cocina:        'Cocina',
+        bano:          'Baño',
+        refrigerador:  'Refrigerador',
+        calefaccion:   'Calefacción',
+        agua_caliente: 'Agua caliente',
+        agua_limpia_l: 'Agua limpia',
+        agua_gris_l:   'Agua gris',
+        agua_negra_l:  'Agua negra',
+      };
+      const val = String(e[k]).endsWith('l') || typeof e[k] === 'number' && k.endsWith('_l')
+        ? `${e[k]} L`
+        : e[k];
+      return `<li class="unidad-tab__item">${labels[k] || k}: ${val}</li>`;
+    });
+
+  if (u.capacidad_personas) items.unshift(`<li class="unidad-tab__item">Capacidad: ${u.capacidad_personas} personas</li>`);
+  if (u.capacidad_dormir)   items.unshift(`<li class="unidad-tab__item">Camas para: ${u.capacidad_dormir} personas</li>`);
+
+  const content = items.length
+    ? `<ul class="unidad-tab__list">${items.join('')}</ul>`
+    : `<p class="unidad-tab__consultar">Detalles de interior disponibles próximamente. Consultanos por WhatsApp.</p>`;
+
+  return { left: `<span class="unidad-tab__eyebrow">Comodidades</span>${content}` };
 }
+
+function tabEquipamiento(u) {
+  const e = u.equipamiento || {};
+  const SKIP = ['cama','cocina','bano','refrigerador','calefaccion','agua_caliente',
+                'agua_limpia_l','agua_gris_l','agua_negra_l'];
+
+  const items = Object.entries(e)
+    .filter(([k, v]) => v != null && !SKIP.includes(k))
+    .map(([, v]) => `<li class="unidad-tab__item">${v}</li>`);
+
+  const content = items.length
+    ? `<ul class="unidad-tab__list">${items.join('')}</ul>`
+    : `<p class="unidad-tab__consultar">Lista de equipamiento disponible próximamente.</p>`;
+
+  return { left: `<span class="unidad-tab__eyebrow">Equipamiento incluido</span>${content}` };
+}
+
+function tabEspecificaciones(u) {
+  const rows = [];
+  const m = u.motor || {};
+  const e = u.equipamiento || {};
+
+  if (m.tipo)         rows.push(['Motor',       m.tipo]);
+  if (m.potencia_hp)  rows.push(['Potencia',    `${m.potencia_hp} HP`]);
+  if (m.norma)        rows.push(['Norma',       m.norma]);
+  if (m.transmision)  rows.push(['Transmisión', m.transmision]);
+  if (m.traccion)     rows.push(['Tracción',    m.traccion]);
+  if (e.chasis)       rows.push(['Chasis',      e.chasis]);
+  if (e.suspension)   rows.push(['Suspensión',  e.suspension]);
+  if (e.neumaticos)   rows.push(['Neumáticos',  e.neumaticos]);
+  if (e.bateria)      rows.push(['Batería',     e.bateria]);
+  if (e.energia)      rows.push(['Energía',     e.energia]);
+  if (e.acoplamiento) rows.push(['Acoplamiento',e.acoplamiento]);
+  if (u.precio_eur)   rows.push(['Precio',      `€ ${u.precio_eur.toLocaleString('es-ES')}`]);
+
+  const content = rows.length
+    ? rows.map(([l, v]) => `
+        <div class="unidad-tab__spec-row">
+          <span class="unidad-tab__spec-label">${l}</span>
+          <span class="unidad-tab__spec-value">${v}</span>
+        </div>`).join('')
+    : `<p class="unidad-tab__consultar">Especificaciones técnicas disponibles próximamente. Consultanos.</p>`;
+
+  return { left: `<span class="unidad-tab__eyebrow">Datos técnicos</span>${content}` };
+}
+
+// ── GALLERY ──────────────────────────────────────────
+
+function galleryHTML(u) {
+  const imgs = Array.from({ length: 4 }, (_, i) => {
+    const src = `assets/img/unidades/${u.imagen_carpeta}/gallery-${i + 1}.jpg`;
+    const fb  = GALLERY_FALLBACKS[i] || fallback(u);
+    return `
+      <div class="unidad-gallery__item">
+        ${imgWithFallback(src, fb, `${u.nombre} — foto ${i + 1}`)}
+      </div>`;
+  }).join('');
+
+  return `
+    <section class="section unidad-gallery">
+      <div class="container">
+        <div class="unidad-gallery__header js-fade-up">
+          <h2 class="unidad-gallery__title">Galería</h2>
+        </div>
+        <div class="unidad-gallery__grid">${imgs}</div>
+      </div>
+    </section>`;
+}
+
+// ── RENDER PRINCIPAL ─────────────────────────────────
 
 function renderUnidad(u) {
-  const main     = document.getElementById('unidadMain');
+  const main   = document.getElementById('unidadMain');
   if (!main) return;
 
-  const tipo     = TIPO_LABELS[u.tipo] || u.tipo;
-  const imgSrc   = `assets/img/unidades/${u.imagen_carpeta}/cover.jpg`;
-  const fallback = PLACEHOLDERS[u.imagen_carpeta] || PLACEHOLDER;
-  const waMsg    = encodeURIComponent(`Hola! Me interesa la unidad ${u.nombre} de ${u.marca}. ¿Pueden darme más info?`);
-  const waURL    = `https://wa.me/59896247661?text=${waMsg}`;
+  const tipo   = TIPO_LABELS[u.tipo] || u.tipo;
+  const cover  = imgSrc(u);
+  const fb     = fallback(u);
+  const waMsg  = encodeURIComponent(`Hola! Me interesa la unidad ${u.nombre} de ${u.marca}. ¿Pueden darme más info?`);
+  const waURL  = `https://wa.me/59896247661?text=${waMsg}`;
 
-  const equipHTML = equipItems(u.equipamiento);
-
-  // SEO dinámico
   document.title = `${u.nombre} — ${u.marca} | Sur Campers Uruguay`;
+
+  const tabs = [
+    { id: 'exterior',       label: 'Exterior',         fn: tabExterior },
+    { id: 'interior',       label: 'Interior',         fn: tabInterior },
+    { id: 'equipamiento',   label: 'Equipamiento',     fn: tabEquipamiento },
+    { id: 'especificaciones', label: 'Especificaciones', fn: tabEspecificaciones },
+  ];
+
+  const tabBtns = tabs.map((t, i) =>
+    `<button class="unidad-tab-btn${i === 0 ? ' active' : ''}" data-tab="${t.id}">${t.label}</button>`
+  ).join('');
+
+  const tabPanels = tabs.map((t, i) => {
+    const { left } = t.fn(u);
+    return `
+      <div class="unidad-tab-panel${i === 0 ? ' active' : ''}" id="tab-${t.id}">
+        <div class="unidad-tab__text">${left}</div>
+        <div class="unidad-tab__media">
+          ${imgWithFallback(cover, fb, `${u.nombre} — ${u.marca}`)}
+        </div>
+      </div>`;
+  }).join('');
 
   main.innerHTML = `
     <!-- Banner -->
-    <section class="unidad-detail-banner" aria-label="${u.nombre}">
+    <section class="unidad-detail-banner">
       <div
         class="unidad-detail-banner__bg"
         id="detailBannerBg"
-        style="background-image: url('${imgSrc}')"
+        style="background-image: url('${cover}')"
         aria-hidden="true"
       ></div>
       <div class="unidad-detail-banner__overlay" aria-hidden="true"></div>
       <div class="container unidad-detail-banner__content">
-        <a href="unidades.html" class="unidad-detail-banner__back">
-          ← Volver al catálogo
-        </a>
+        <a href="unidades.html" class="unidad-detail-banner__back">← Volver al catálogo</a>
         <span class="unidad-detail-banner__marca">${u.marca}</span>
         <h1 class="unidad-detail-banner__title">${u.nombre}</h1>
         <p class="unidad-detail-banner__subtipo">${u.subtipo || tipo}</p>
       </div>
     </section>
 
-    <!-- Detalle + Specs -->
-    <section class="section unidad-detail">
-      <div class="container unidad-detail__inner">
-
-        <!-- Columna izquierda: info + equipamiento -->
-        <div>
-          <span class="eyebrow--bar" style="margin-bottom:var(--space-6);display:inline-block;">${tipo}</span>
-
-          ${equipHTML ? `
-          <div style="margin-top:var(--space-10);">
-            <h2 class="unidad-equip__title">Equipamiento</h2>
-            ${equipHTML}
-          </div>` : ''}
-
-          ${u.link_oficial ? `
-          <a
-            href="${u.link_oficial}"
-            class="btn btn-ghost"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="margin-top:var(--space-10);"
-          >Ver en sitio oficial →</a>` : ''}
+    <!-- Tabs -->
+    <section class="section" style="padding-bottom:0;">
+      <div class="container">
+        <div class="unidad-tabs">
+          <nav class="unidad-tabs__nav" role="tablist" aria-label="Secciones de la unidad">
+            ${tabBtns}
+          </nav>
+          <div class="unidad-tabs__content">
+            ${tabPanels}
+          </div>
         </div>
-
-        <!-- Columna derecha: specs sticky -->
-        <aside class="unidad-detail__specs-card">
-          <p class="unidad-detail__specs-title">Especificaciones</p>
-          ${specsRows(u)}
-          <a
-            href="${waURL}"
-            class="btn btn-primary unidad-detail__specs-cta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Consultar por WhatsApp</a>
-        </aside>
-
+        <div style="text-align:right; margin-top:var(--space-4);">
+          <a href="${waURL}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Consultar esta unidad →
+          </a>
+        </div>
       </div>
     </section>
+
+    <!-- Galería -->
+    ${galleryHTML(u)}
 
     <!-- Contacto -->
     <section class="section contacto" id="contacto" aria-label="Contacto">
@@ -152,12 +257,7 @@ function renderUnidad(u) {
             </p>
           </div>
           <div class="contacto__links">
-            <a
-              href="${waURL}"
-              class="contacto__card contacto__card--primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="${waURL}" class="contacto__card contacto__card--primary" target="_blank" rel="noopener noreferrer">
               <div class="contacto__card-meta">
                 <span class="contacto__card-label">WhatsApp</span>
                 <span class="contacto__card-value">+598 96 247 661</span>
@@ -176,13 +276,34 @@ function renderUnidad(u) {
       </div>
     </section>`;
 
-  // Fallback de imagen del banner
-  const bgEl = document.getElementById('detailBannerBg');
-  const testImg = new Image();
+  // Fallback banner bg
+  const testImg  = new Image();
   testImg.onerror = () => {
-    if (bgEl) bgEl.style.backgroundImage = `url('${fallback}')`;
+    const bgEl = document.getElementById('detailBannerBg');
+    if (bgEl) bgEl.style.backgroundImage = `url('${fb}')`;
   };
-  testImg.src = imgSrc;
+  testImg.src = cover;
+
+  // Fallback galería e imágenes de tabs
+  main.querySelectorAll('img[data-fallback]').forEach(img => {
+    img.addEventListener('error', () => {
+      const f = img.dataset.fallback;
+      if (f && img.src !== new URL(f, location.href).href) img.src = f;
+    });
+  });
+
+  // Tabs interactivos
+  const navEl = main.querySelector('.unidad-tabs__nav');
+  navEl.addEventListener('click', e => {
+    const btn = e.target.closest('.unidad-tab-btn');
+    if (!btn) return;
+
+    navEl.querySelectorAll('.unidad-tab-btn').forEach(b => b.classList.remove('active'));
+    main.querySelectorAll('.unidad-tab-panel').forEach(p => p.classList.remove('active'));
+
+    btn.classList.add('active');
+    main.querySelector(`#tab-${btn.dataset.tab}`)?.classList.add('active');
+  });
 }
 
 function renderError() {
@@ -191,8 +312,9 @@ function renderError() {
   main.innerHTML = `
     <section class="section" style="min-height:60vh;display:flex;align-items:center;">
       <div class="container" style="text-align:center;">
-        <span class="eyebrow--bar" style="margin-bottom:var(--space-6);display:inline-block;">404</span>
-        <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:800;color:var(--color-text-primary);margin-bottom:var(--space-6);">
+        <span class="eyebrow--bar" style="display:inline-block;margin-bottom:var(--space-6);">404</span>
+        <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);
+                   font-weight:800;color:var(--color-text-primary);margin-bottom:var(--space-6);">
           Unidad no encontrada
         </h1>
         <a href="unidades.html" class="btn btn-primary">← Ver catálogo</a>
@@ -208,7 +330,6 @@ async function initUnidad() {
     const res      = await fetch('data/catalogo.json');
     const unidades = await res.json();
     const u        = unidades.find(x => x.id === id);
-
     if (!u) { renderError(); return; }
     renderUnidad(u);
   } catch (err) {

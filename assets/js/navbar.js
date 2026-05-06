@@ -14,15 +14,17 @@ export function initNavbar() {
   // ── SCROLL EFFECT ───────────────────────────────────
   const SCROLL_THRESHOLD = 60;
 
-  const onScroll = () => {
-    if (window.scrollY > SCROLL_THRESHOLD) {
-      navbar.classList.add("is-scrolled");
-    } else {
-      navbar.classList.remove("is-scrolled");
-    }
+  const onScroll = ({ scroll } = {}) => {
+    const pos = scroll ?? window.scrollY;
+    navbar.classList.toggle("is-scrolled", pos > SCROLL_THRESHOLD);
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
+  // Usa el evento de Lenis si está disponible, si no cae al nativo
+  if (window.__lenis) {
+    window.__lenis.on("scroll", onScroll);
+  } else {
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
   onScroll(); // estado inicial
 
   // ── BURGER ──────────────────────────────────────────

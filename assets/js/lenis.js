@@ -18,11 +18,13 @@ export function initLenis() {
 
   // Conectar Lenis con GSAP ticker para compatibilidad con ScrollTrigger
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    // Notifica a ScrollTrigger en cada frame de Lenis para que usen la misma posición
+    lenis.on("scroll", ScrollTrigger.update);
+
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0);
-    ScrollTrigger.refresh();
   } else {
     // Fallback sin GSAP
     function raf(time) {

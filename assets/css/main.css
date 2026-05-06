@@ -186,6 +186,21 @@ section {
     color: var(--color-text-secondary);
 }
 
+.catalogo-banner .eyebrow {
+    position: relative;
+    color: var(--color-text-inverse);
+}
+
+.catalogo-banner .eyebrow::before {
+    content: '';
+    position: absolute;
+    inset: -6px -10px;
+    background: url('../img/tools/mancha-marron.png') center / 100% 100% no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
 /* ── BOTONES ──────────────────────────────────────── */
 
 .btn {
