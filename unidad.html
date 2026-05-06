@@ -4,24 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO -->
-    <title>Unidades — Sur Campers Uruguay</title>
-    <meta
-      name="description"
-      content="Catálogo de unidades Sur Campers. Carpas de techo, minicampers, casas rodantes y motorhomes 0km importados."
-    />
+    <!-- SEO — llenado dinámicamente por JS -->
+    <title>Unidad — Sur Campers Uruguay</title>
+    <meta name="description" content="Ficha técnica de unidad Sur Campers Uruguay." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.surcampers.uy/unidades" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Unidades — Sur Campers Uruguay" />
-    <meta
-      property="og:description"
-      content="Catálogo de unidades Sur Campers. Carpas de techo, minicampers, casas rodantes y motorhomes 0km importados."
-    />
-    <meta property="og:image" content="assets/img/og-image.jpg" />
-    <meta property="og:url" content="https://www.surcampers.uy/unidades" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32.png" />
@@ -36,8 +22,6 @@
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js" defer></script>
   </head>
 
   <body>
@@ -93,83 +77,8 @@
       >WhatsApp</a>
     </nav>
 
-    <main>
-      <!-- ── PAGE BANNER ────────────────────────────────── -->
-      <section class="catalogo-banner" aria-label="Catálogo de unidades">
-        <div
-          class="catalogo-banner__bg"
-          style="background-image: url('assets/img/hero/hero-2.jpg')"
-          aria-hidden="true"
-        ></div>
-        <div class="catalogo-banner__overlay" aria-hidden="true"></div>
-        <div class="container catalogo-banner__content js-fade-up">
-          <span class="eyebrow">
-            <span class="eyebrow__line" aria-hidden="true"></span>
-            Sur Campers Uruguay
-          </span>
-          <h1 class="catalogo-banner__title">Nuestras<br />unidades</h1>
-          <p class="catalogo-banner__count">10 modelos disponibles · 0km importados</p>
-        </div>
-      </section>
-
-      <!-- ── CATÁLOGO GRID ──────────────────────────────── -->
-      <section class="section" id="catalogo" aria-label="Catálogo">
-        <div class="container">
-          <div
-            class="catalogo-filters"
-            id="catalogoFilters"
-            role="group"
-            aria-label="Filtrar por tipo"
-          ></div>
-          <div
-            class="unidades-grid"
-            id="unidadesGrid"
-            aria-live="polite"
-            aria-label="Unidades disponibles"
-          ></div>
-        </div>
-      </section>
-
-      <!-- ── CONTACTO ───────────────────────────────────── -->
-      <section class="section contacto" id="contacto" aria-label="Contacto">
-        <div class="container">
-          <div class="contacto__inner">
-            <div class="contacto__copy js-fade-up">
-              <span class="eyebrow">
-                <span class="eyebrow__line" aria-hidden="true"></span>
-                Contacto
-              </span>
-              <h2 class="contacto__title">Hablemos.</h2>
-              <p class="contacto__desc">
-                Respondemos todas las consultas por WhatsApp.<br />
-                Sin vueltas, sin esperas.
-              </p>
-            </div>
-
-            <div class="contacto__links" data-stagger>
-              <a
-                href="https://wa.me/59896247661"
-                class="contacto__card contacto__card--primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="contacto__card-meta">
-                  <span class="contacto__card-label">WhatsApp</span>
-                  <span class="contacto__card-value">+598 96 247 661</span>
-                </div>
-                <span class="contacto__card-arrow" aria-hidden="true">→</span>
-              </a>
-              <a href="mailto:surcampersuruguay@gmail.com" class="contacto__card">
-                <div class="contacto__card-meta">
-                  <span class="contacto__card-label">Email</span>
-                  <span class="contacto__card-value">surcampersuruguay@gmail.com</span>
-                </div>
-                <span class="contacto__card-arrow" aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main id="unidadMain">
+      <!-- Contenido llenado dinámicamente por unidad.js -->
     </main>
 
     <!-- ── FOOTER ─────────────────────────────────────── -->
@@ -232,6 +141,6 @@
 
     <!-- ── JS ─────────────────────────────────────────── -->
     <script type="module" src="assets/js/main.js" defer></script>
-    <script type="module" src="assets/js/catalogo.js" defer></script>
+    <script type="module" src="assets/js/unidad.js" defer></script>
   </body>
 </html>
