@@ -1,7 +1,7 @@
 [
   {
     "id": "julia-yosemite",
-    "nombre": "Yosemite",
+    "nombre": "Julia Yosemite",
     "marca": "Julia Camper",
     "tipo": "motorhome",
     "subtipo": "4x4 integral",
@@ -45,12 +45,12 @@
     "precio_eur": null,
     "colores": null,
     "link_oficial": "https://juliacamper.com/en_GB/yosemite",
-    "imagen_carpeta": "julia",
+    "imagen_carpeta": "julia-yosemite",
     "completo": true
   },
   {
     "id": "ilusion-740-xmk",
-    "nombre": "740 XMK",
+    "nombre": "Ilusion 740 XMK",
     "marca": "Ilusion Caravaning",
     "tipo": "motorhome",
     "subtipo": "semi-integral",
@@ -81,12 +81,12 @@
     "precio_eur": null,
     "colores": null,
     "link_oficial": "https://ilusioncaravaning.com/autocaravanas/serie-xmk/740-xmk/",
-    "imagen_carpeta": "ilusion",
+    "imagen_carpeta": "ilusion-740-xmk",
     "completo": true
   },
   {
     "id": "buho-xpedicion-1eje",
-    "nombre": "Xpedición 1 eje",
+    "nombre": "BuHo Xpedición 1 eje",
     "marca": "Rodantes BuHo",
     "tipo": "trailer",
     "subtipo": "off-road 1 eje",
@@ -116,13 +116,13 @@
     "contacto": "+54 11 3685-1432",
     "colores": null,
     "link_oficial": "https://www.rodantesbuho.com.ar/ver.rodantes.php?id=1",
-    "imagen_carpeta": "buho",
+    "imagen_carpeta": "buho-xpedicion-1eje",
     "completo": false,
     "pendiente": "Dimensiones, peso y capacidad — contactar fabricante"
   },
   {
     "id": "buho-xpedicion-2ejes",
-    "nombre": "Xpedición 2 ejes",
+    "nombre": "BuHo Xpedición 2 ejes",
     "marca": "Rodantes BuHo",
     "tipo": "trailer",
     "subtipo": "off-road 2 ejes",
@@ -136,13 +136,13 @@
     "precio_eur": null,
     "colores": null,
     "link_oficial": null,
-    "imagen_carpeta": "buho",
+    "imagen_carpeta": "buho-xpedicion-2ejes",
     "completo": false,
     "pendiente": "Sin link — toda la info pendiente"
   },
   {
     "id": "caretta-asena-offroad",
-    "nombre": "Asena Off Road",
+    "nombre": "Caretta Off Road",
     "marca": "Caretta Caravans",
     "tipo": "trailer",
     "subtipo": "off-road",
@@ -175,12 +175,12 @@
     "precio_eur": null,
     "colores": ["blanco", "champagne", "gris", "antracita"],
     "link_oficial": "https://carettacaravan.eu/models/asena-offroad/",
-    "imagen_carpeta": "caretta",
+    "imagen_carpeta": "caretta-asena-offroad",
     "completo": true
   },
   {
     "id": "caretta-uncle-basoglu",
-    "nombre": "Asena Uncle",
+    "nombre": "Caretta Uncle",
     "marca": "Caretta Caravans",
     "distribuidor": "Basoglu",
     "tipo": "trailer",
@@ -212,12 +212,12 @@
     "precio_eur": null,
     "colores": ["blanco", "champagne", "gris"],
     "link_oficial": "https://carettacaravan.eu/models/asena-uncle/",
-    "imagen_carpeta": "caretta",
+    "imagen_carpeta": "caretta-uncle-basoglu",
     "completo": true
   },
   {
     "id": "caretta-1500",
-    "nombre": "Asena 1500",
+    "nombre": "Caretta 1500",
     "marca": "Caretta Caravans",
     "tipo": "trailer",
     "subtipo": "caravana compacta",
@@ -249,12 +249,12 @@
     "precio_eur": null,
     "colores": ["blanco", "champagne", "gris", "antracita"],
     "link_oficial": "https://carettacaravan.eu/models/asena-1500/",
-    "imagen_carpeta": "caretta",
+    "imagen_carpeta": "caretta-1500",
     "completo": true
   },
   {
     "id": "mactrail-monterrey-100m",
-    "nombre": "Monterrey 100 M",
+    "nombre": "Mactrail Monterrey 100 M",
     "marca": "Mactrail",
     "tipo": "food-truck",
     "subtipo": "remolque gastronómico",
@@ -262,34 +262,36 @@
     "capacidad_personas": 2,
     "capacidad_dormir": null,
     "dimensiones": {
-      "largo_m": 4.0,
-      "ancho_m": 1.8,
-      "alto_m": 1.92,
-      "nota": "Dimensiones modelo L de referencia; M es tamaño intermedio"
+      "largo_cm": 310,
+      "ancho_cm": 170,
+      "alto_cm": 192
     },
     "peso": null,
     "motor": null,
     "equipamiento": {
       "carroceria": "Monocasco fibra de vidrio",
-      "zocalo": "Chapa aluminio diamond plate americana",
-      "piso": "Goma (forrado fibra de vidrio en versión FULL)",
-      "apertura": "Ventana lateral + puerta trasera 3 hojas",
-      "eje": "Rodado 14\" neumáticos 0 km",
+      "zocalo": "Guardabarros aluminio Diamond Plate importado USA",
+      "piso": "Goma vinílica de alto tránsito",
+      "paredes": "Fibra de vidrio color blanco",
+      "apertura": "Ventana lateral 200×80 cm + puerta trasera 3 hojas",
+      "cerradura": "Americana en ventana lateral y puerta",
+      "eje": "Rodado 15\" All Terrain, cubiertas y llantas 0 km",
       "acople": "Bocha 2\"",
-      "electricidad": "Instalación eléctrica + luces LED",
-      "extras_full": "Barra mostrador, pata timonera, bandas blancas neumáticos",
-      "opcional": "Kit gastronómico básico, mesadas acero inoxidable, sistemas de agua"
+      "pata_timonera": "Incluida",
+      "auxilio": "Rueda de auxilio",
+      "electricidad": "Instalación eléctrica interior completa",
+      "mostrador": "Barra mostrador exterior incluida",
+      "opcional": "Variantes y diseños a medida — consultanos"
     },
     "precio_eur": null,
     "colores": null,
     "link_oficial": "http://mactrailrental.com/fleet/monterrey-100/",
-    "imagen_carpeta": "mactrail",
-    "completo": false,
-    "pendiente": "Peso exacto, precio y dimensiones exactas del modelo M — certificado SSL inválido bloqueó el scraping completo"
+    "imagen_carpeta": "mactrail-monterrey-100m",
+    "completo": true
   },
   {
     "id": "buho-popup",
-    "nombre": "Línea POP UP",
+    "nombre": "BuHo POP UP",
     "marca": "Rodantes BuHo",
     "tipo": "trailer",
     "subtipo": "pop-up",
@@ -303,37 +305,51 @@
     "precio_eur": null,
     "colores": null,
     "link_oficial": "https://www.surcampers.uy/producto/lnea-pop-up--buho",
-    "imagen_carpeta": "buho",
+    "imagen_carpeta": "buho-popup",
     "completo": false,
     "pendiente": "Página surcampers.uy requiere JS — toda la info pendiente, buscar en sitio oficial BuHo"
   },
   {
     "id": "mactrail-100s",
-    "nombre": "Línea 100s",
+    "nombre": "Mactrail 100s",
     "marca": "Mactrail",
     "tipo": "food-truck",
     "subtipo": "remolque gastronómico compacto",
     "base": null,
     "capacidad_personas": 2,
-    "capacidad_dormir": null,
-    "dimensiones": null,
+    "capacidad_dormir": 2,
+    "dimensiones": {
+      "largo_cm": 250,
+      "ancho_cm": 170,
+      "alto_cm": 192
+    },
     "peso": {
       "nota": "Muy liviano, no requiere sistema de frenos"
     },
     "motor": null,
     "equipamiento": {
-      "carroceria": "Fibra de vidrio",
-      "eje": "Rodado 14\"",
-      "apertura": "Ventana lateral + puerta trasera 2 hojas",
-      "electricidad": "Instalación eléctrica + luces LED",
-      "auxilio": "Rueda de auxilio",
-      "opcional": "Sistemas de agua, mesadas"
+      "chasis": "Hierro estructural",
+      "carroceria": "Monocasco fibra de vidrio, color a elección",
+      "zocalo": "Chapa aluminio Diamond Plate americana",
+      "piso": "Chapa aluminio Diamond Plate",
+      "paredes": "Interior forrado en madera",
+      "apertura": "Lateral volcable (tipo deck) + 2 ventanas laterales + escotilla ventilación superior + portón trasero 2 hojas con cerradura",
+      "eje": "Rodado 14\", llantas cromadas 0 km",
+      "acople": "Bocha 2\"",
+      "pata_timonera": "Incluida",
+      "auxilio": "Rueda de auxilio + bandas blancas en neumáticos",
+      "guardabarros": "Aluminio americanos",
+      "electricidad": "Instalación eléctrica + iluminación LED",
+      "audio": "Equipo de audio Bluetooth",
+      "agua": "Mesada inox con bacha y canilla · Sistema de agua simple 30+30 L · Bomba eco",
+      "cuchetas": "2 cuchetas rebatibles",
+      "seguridad": "Anclajes internos + matafuego",
+      "garantia": "2 años · Documentación completa para patentamiento"
     },
     "precio_eur": null,
-    "colores": null,
+    "colores": ["a elección"],
     "link_oficial": "https://www.surcampers.uy/producto/lnea-100s-mactrail",
-    "imagen_carpeta": "mactrail",
-    "completo": false,
-    "pendiente": "Dimensiones y peso exactos — página surcampers.uy requiere JS"
+    "imagen_carpeta": "mactrail-100s",
+    "completo": true
   }
 ]

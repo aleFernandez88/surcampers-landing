@@ -29,7 +29,13 @@ function imgSrc(u) {
 }
 
 function fallback(u) {
-  return PLACEHOLDERS[u.imagen_carpeta] || GALLERY_FALLBACKS[0];
+  const brandKey = u.imagen_carpeta.split('-')[0];
+  return PLACEHOLDERS[brandKey] || GALLERY_FALLBACKS[0];
+}
+
+function imgOrPlaceholder(u, src, fb, alt) {
+  if (!u.completo) return `<div class="img-placeholder">Próximamente</div>`;
+  return imgWithFallback(src, fb, alt);
 }
 
 function imgWithFallback(src, fb, alt) {
@@ -150,7 +156,7 @@ function galleryHTML(u) {
     const fb  = GALLERY_FALLBACKS[i] || fallback(u);
     return `
       <div class="unidad-gallery__item">
-        ${imgWithFallback(src, fb, `${u.nombre} — foto ${i + 1}`)}
+        ${imgOrPlaceholder(u, src, fb, `${u.nombre} — foto ${i + 1}`)}
       </div>`;
   }).join('');
 
@@ -196,7 +202,7 @@ function renderUnidad(u) {
       <div class="unidad-tab-panel${i === 0 ? ' active' : ''}" id="tab-${t.id}">
         <div class="unidad-tab__text">${left}</div>
         <div class="unidad-tab__media">
-          ${imgWithFallback(cover, fb, `${u.nombre} — ${u.marca}`)}
+          ${imgOrPlaceholder(u, cover, fb, `${u.nombre} — ${u.marca}`)}
         </div>
       </div>`;
   }).join('');
@@ -207,7 +213,7 @@ function renderUnidad(u) {
       <div
         class="unidad-detail-banner__bg"
         id="detailBannerBg"
-        style="background-image: url('${cover}')"
+        ${u.completo ? `style="background-image: url('${cover}')"` : ''}
         aria-hidden="true"
       ></div>
       <div class="unidad-detail-banner__overlay" aria-hidden="true"></div>
@@ -284,21 +290,23 @@ function renderUnidad(u) {
       </div>
     </section>`;
 
-  // Fallback banner bg
-  const testImg  = new Image();
-  testImg.onerror = () => {
-    const bgEl = document.getElementById('detailBannerBg');
-    if (bgEl) bgEl.style.backgroundImage = `url('${fb}')`;
-  };
-  testImg.src = cover;
+  if (u.completo) {
+    // Fallback banner bg
+    const testImg = new Image();
+    testImg.onerror = () => {
+      const bgEl = document.getElementById('detailBannerBg');
+      if (bgEl) bgEl.style.backgroundImage = `url('${fb}')`;
+    };
+    testImg.src = cover;
 
-  // Fallback galería e imágenes de tabs
-  main.querySelectorAll('img[data-fallback]').forEach(img => {
-    img.addEventListener('error', () => {
-      const f = img.dataset.fallback;
-      if (f && img.src !== new URL(f, location.href).href) img.src = f;
+    // Fallback galería e imágenes de tabs
+    main.querySelectorAll('img[data-fallback]').forEach(img => {
+      img.addEventListener('error', () => {
+        const f = img.dataset.fallback;
+        if (f && img.src !== new URL(f, location.href).href) img.src = f;
+      });
     });
-  });
+  }
 
   // Tabs interactivos
   const navEl = main.querySelector('.unidad-tabs__nav');

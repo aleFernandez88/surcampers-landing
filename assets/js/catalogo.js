@@ -36,7 +36,8 @@ const ICON_LARGO = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 function buildCard(u) {
   const tipo       = TIPO_LABELS[u.tipo] || u.tipo;
   const imgSrc     = `assets/img/unidades/${u.imagen_carpeta}/cover.jpg`;
-  const fallback   = PLACEHOLDERS[u.imagen_carpeta] || 'assets/img/hero/hero-1.jpg';
+  const brandKey   = u.imagen_carpeta.split('-')[0];
+  const fallback   = PLACEHOLDERS[brandKey] || 'assets/img/hero/hero-1.jpg';
 
   const specs = [];
   if (u.capacidad_personas) {
@@ -51,9 +52,9 @@ function buildCard(u) {
     ? `<div class="unidad-card__specs">${specs.join('')}</div>`
     : '';
 
-  const proximamente = !u.completo
-    ? `<div class="unidad-card__proximamente" aria-hidden="true">Próximamente</div>`
-    : '';
+  const mediaContent = u.completo
+    ? `<img src="${imgSrc}" alt="${u.nombre} — ${u.marca}" loading="lazy" data-fallback="${fallback}" />`
+    : `<div class="img-placeholder">Próximamente</div>`;
 
   const ctaHTML = u.completo
     ? `<a href="unidad.html?id=${u.id}" class="btn btn-primary unidad-card__cta">Ver ficha →</a>`
@@ -62,14 +63,8 @@ function buildCard(u) {
   return `
     <article class="unidad-card${!u.completo ? ' unidad-card--incomplete' : ''}" data-tipo="${u.tipo}">
       <div class="unidad-card__media">
-        <img
-          src="${imgSrc}"
-          alt="${u.nombre} — ${u.marca}"
-          loading="lazy"
-          data-fallback="${fallback}"
-        />
+        ${mediaContent}
         <span class="unidad-card__brand">${u.marca}</span>
-        ${proximamente}
       </div>
       <div class="unidad-card__body">
         <span class="eyebrow--bar unidad-card__tipo">${tipo}</span>
