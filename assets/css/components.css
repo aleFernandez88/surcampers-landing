@@ -710,6 +710,63 @@ a.product-card {
     }
 }
 
+/* ── PRELOADER ────────────────────────────────────── */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease;
+}
+
+.preloader.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.preloader__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader__logo {
+    width: 110px;
+    position: relative;
+    z-index: 1;
+}
+
+.preloader__ring {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+}
+
+.preloader__ring--outer {
+    animation: spin-cw 1.8s linear infinite;
+}
+
+.preloader__ring--inner {
+    width: 150px;
+    height: 150px;
+    animation: spin-ccw 2.4s linear infinite;
+}
+
+@keyframes spin-cw {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+}
+
 /* ── PULL QUOTE ───────────────────────────────────── */
 
 .pullquote {

@@ -8,6 +8,21 @@ import { initNavbar } from "./navbar.js";
 import { initAnimations } from "./animations.js";
 import { initHero } from "./hero.js";
 
+// ── PRELOADER ────────────────────────────────────────
+const preloaderStart = Date.now();
+
+window.addEventListener("load", () => {
+  const elapsed = Date.now() - preloaderStart;
+  const remaining = Math.max(0, 1000 - elapsed);
+
+  setTimeout(() => {
+    const preloader = document.getElementById("preloader");
+    if (!preloader) return;
+    preloader.classList.add("is-hidden");
+    preloader.addEventListener("transitionend", () => preloader.remove(), { once: true });
+  }, remaining);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Smooth scroll
   initLenis();
