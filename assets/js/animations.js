@@ -126,10 +126,9 @@ export function initAnimations() {
     const children = group.children;
     gsap.from(children, {
       opacity: 0,
-      y: 32,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: "power3.out",
+      stagger: 0.12,
+      duration: 0.7,
+      ease: "power2.out",
       scrollTrigger: {
         trigger: group,
         start: "top 85%",

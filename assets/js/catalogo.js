@@ -4,9 +4,11 @@
    ============================================================ */
 
 const TIPO_LABELS = {
-  motorhome:    'Motorhome',
-  trailer:      'Trailer',
-  'food-truck': 'Food Truck',
+  motorhome:      'Motorhome',
+  'casa-rodante': 'Casa Rodante',
+  minicamper:     'Minicamper',
+  trailer:        'Trailer',
+  'food-truck':   'Food Truck',
 };
 
 const PLACEHOLDERS = {

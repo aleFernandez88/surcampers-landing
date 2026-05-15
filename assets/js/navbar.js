@@ -12,20 +12,25 @@ export function initNavbar() {
   if (!navbar) return;
 
   // ── SCROLL EFFECT ───────────────────────────────────
-  const SCROLL_THRESHOLD = 60;
+  const isHome = location.pathname.endsWith("index.html") || location.pathname === "/" || location.pathname.endsWith("/");
 
-  const onScroll = ({ scroll } = {}) => {
-    const pos = scroll ?? window.scrollY;
-    navbar.classList.toggle("is-scrolled", pos > SCROLL_THRESHOLD);
-  };
-
-  // Usa el evento de Lenis si está disponible, si no cae al nativo
-  if (window.__lenis) {
-    window.__lenis.on("scroll", onScroll);
+  if (!isHome) {
+    navbar.classList.add("is-scrolled");
   } else {
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const SCROLL_THRESHOLD = 60;
+
+    const onScroll = ({ scroll } = {}) => {
+      const pos = scroll ?? window.scrollY;
+      navbar.classList.toggle("is-scrolled", pos > SCROLL_THRESHOLD);
+    };
+
+    if (window.__lenis) {
+      window.__lenis.on("scroll", onScroll);
+    } else {
+      window.addEventListener("scroll", onScroll, { passive: true });
+    }
+    onScroll();
   }
-  onScroll(); // estado inicial
 
   // ── BURGER ──────────────────────────────────────────
   if (!burger || !mobileMenu) return;
