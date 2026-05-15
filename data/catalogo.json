@@ -85,6 +85,114 @@
     "completo": true
   },
   {
+    "id": "ilusion-590-premium",
+    "nombre": "Ilusion 590 Premium",
+    "marca": "Ilusion Caravaning",
+    "tipo": "motorhome",
+    "subtipo": "semi-integral",
+    "base": null,
+    "capacidad_personas": 2,
+    "capacidad_dormir": 2,
+    "descripcion": "Semi-integral compacta diseñada para parejas, ideal para actividades deportivas en naturaleza, montaña o costa. Todo lo que necesitás en menos de seis metros de largo.",
+    "dimensiones": {
+      "largo_cm": 600,
+      "ancho_cm": 235,
+      "alto_cm": 285
+    },
+    "peso": {
+      "mtpm_kg": 3500,
+      "remolcable_max_kg": 2000
+    },
+    "motor": null,
+    "equipamiento": {
+      "cama": "Cama doble trasera + altillo accesible",
+      "refrigerador": "144L absorción apertura bidireccional con LED",
+      "bano": "Ducha 2m de altura con iluminación LED",
+      "garaje": "Con acceso bilateral",
+      "mesa": "KRION® deslizable 360° y regulable en altura",
+      "colchones": "Anatómicos e hipoalergénicos",
+      "iluminacion": "LED distribuida en todo el espacio"
+    },
+    "precio_eur": null,
+    "colores": null,
+    "link_oficial": "https://ilusioncaravaning.com/autocaravanas/serie-xmk-premium/590-premium/",
+    "imagen_carpeta": "ilusion-590-premium",
+    "completo": true
+  },
+  {
+    "id": "ilusion-695-premium",
+    "nombre": "Ilusion 695 Premium",
+    "marca": "Ilusion Caravaning",
+    "tipo": "motorhome",
+    "subtipo": "semi-integral",
+    "base": null,
+    "capacidad_personas": 5,
+    "capacidad_dormir": 4,
+    "descripcion": "De las más confortables gracias a su gran comodidad en la zona del dormitorio, con cama matrimonial en isla de fácil acceso.",
+    "dimensiones": {
+      "largo_cm": 700,
+      "ancho_cm": 235,
+      "alto_cm": 285
+    },
+    "peso": {
+      "mtpm_kg": 3500,
+      "remolcable_max_kg": 2000
+    },
+    "motor": null,
+    "equipamiento": {
+      "cama": "Matrimonial en isla + opción cama elevable delantera",
+      "refrigerador": "Slim Tower 144L apertura bidireccional",
+      "bano": "Ducha 2m de altura con iluminación LED",
+      "garaje": "Aluminio con doble portón",
+      "cocina": "3 fuegos + mesa deslizable y regulable",
+      "agua_limpia_l": 100,
+      "agua_gris_l": 100,
+      "extras": "5ª plaza en carretera, iluminación LED"
+    },
+    "precio_eur": null,
+    "colores": null,
+    "link_oficial": "https://ilusioncaravaning.com/autocaravanas/serie-xmk-premium/695-premium/",
+    "imagen_carpeta": "ilusion-695-premium",
+    "completo": true
+  },
+  {
+    "id": "ilusion-730-premium",
+    "nombre": "Ilusion 730 Premium",
+    "marca": "Ilusion Caravaning",
+    "tipo": "motorhome",
+    "subtipo": "semi-integral",
+    "base": null,
+    "capacidad_personas": 4,
+    "capacidad_dormir": 4,
+    "descripcion": "Funcional y elegante, lo tiene todo en poco más de 7 metros. Confort y versatilidad para viajes largos.",
+    "dimensiones": {
+      "largo_cm": 739,
+      "ancho_cm": 235,
+      "alto_cm": 285
+    },
+    "peso": {
+      "mtpm_kg": 3500,
+      "remolcable_max_kg": 2000
+    },
+    "motor": null,
+    "equipamiento": {
+      "cama": "En isla 135×193 cm con acceso bilateral + zona dormitorio separada",
+      "refrigerador": "144L apertura bidireccional",
+      "bano": "Ducha independiente 2m + inodoro cerámico",
+      "garaje": "Aluminio con doble portón",
+      "cocina": "3 fuegos + encimera KRION® en L",
+      "agua_limpia_l": 100,
+      "agua_gris_l": 100,
+      "mesa": "KRION® deslizable y regulable",
+      "extras": "Asientos giratorios de cabina, iluminación LED, múltiples USB y enchufes"
+    },
+    "precio_eur": null,
+    "colores": null,
+    "link_oficial": "https://ilusioncaravaning.com/autocaravanas/serie-xmk-premium/730-premium/",
+    "imagen_carpeta": "ilusion-730-premium",
+    "completo": true
+  },
+  {
     "id": "buho-xpedicion-1eje",
     "nombre": "BuHo Xpedición 1 eje",
     "marca": "Rodantes BuHo",
@@ -253,43 +361,6 @@
     "completo": true
   },
   {
-    "id": "mactrail-monterrey-100m",
-    "nombre": "Mactrail Monterrey 100 M",
-    "marca": "Mactrail",
-    "tipo": "food-truck",
-    "subtipo": "remolque gastronómico",
-    "base": null,
-    "capacidad_personas": 2,
-    "capacidad_dormir": null,
-    "dimensiones": {
-      "largo_cm": 310,
-      "ancho_cm": 170,
-      "alto_cm": 192
-    },
-    "peso": null,
-    "motor": null,
-    "equipamiento": {
-      "carroceria": "Monocasco fibra de vidrio",
-      "zocalo": "Guardabarros aluminio Diamond Plate importado USA",
-      "piso": "Goma vinílica de alto tránsito",
-      "paredes": "Fibra de vidrio color blanco",
-      "apertura": "Ventana lateral 200×80 cm + puerta trasera 3 hojas",
-      "cerradura": "Americana en ventana lateral y puerta",
-      "eje": "Rodado 15\" All Terrain, cubiertas y llantas 0 km",
-      "acople": "Bocha 2\"",
-      "pata_timonera": "Incluida",
-      "auxilio": "Rueda de auxilio",
-      "electricidad": "Instalación eléctrica interior completa",
-      "mostrador": "Barra mostrador exterior incluida",
-      "opcional": "Variantes y diseños a medida — consultanos"
-    },
-    "precio_eur": null,
-    "colores": null,
-    "link_oficial": "http://mactrailrental.com/fleet/monterrey-100/",
-    "imagen_carpeta": "mactrail-monterrey-100m",
-    "completo": true
-  },
-  {
     "id": "buho-popup",
     "nombre": "BuHo POP UP",
     "marca": "Rodantes BuHo",
@@ -309,47 +380,4 @@
     "completo": false,
     "pendiente": "Página surcampers.uy requiere JS — toda la info pendiente, buscar en sitio oficial BuHo"
   },
-  {
-    "id": "mactrail-100s",
-    "nombre": "Mactrail 100s",
-    "marca": "Mactrail",
-    "tipo": "food-truck",
-    "subtipo": "remolque gastronómico compacto",
-    "base": null,
-    "capacidad_personas": 2,
-    "capacidad_dormir": 2,
-    "dimensiones": {
-      "largo_cm": 250,
-      "ancho_cm": 170,
-      "alto_cm": 192
-    },
-    "peso": {
-      "nota": "Muy liviano, no requiere sistema de frenos"
-    },
-    "motor": null,
-    "equipamiento": {
-      "chasis": "Hierro estructural",
-      "carroceria": "Monocasco fibra de vidrio, color a elección",
-      "zocalo": "Chapa aluminio Diamond Plate americana",
-      "piso": "Chapa aluminio Diamond Plate",
-      "paredes": "Interior forrado en madera",
-      "apertura": "Lateral volcable (tipo deck) + 2 ventanas laterales + escotilla ventilación superior + portón trasero 2 hojas con cerradura",
-      "eje": "Rodado 14\", llantas cromadas 0 km",
-      "acople": "Bocha 2\"",
-      "pata_timonera": "Incluida",
-      "auxilio": "Rueda de auxilio + bandas blancas en neumáticos",
-      "guardabarros": "Aluminio americanos",
-      "electricidad": "Instalación eléctrica + iluminación LED",
-      "audio": "Equipo de audio Bluetooth",
-      "agua": "Mesada inox con bacha y canilla · Sistema de agua simple 30+30 L · Bomba eco",
-      "cuchetas": "2 cuchetas rebatibles",
-      "seguridad": "Anclajes internos + matafuego",
-      "garantia": "2 años · Documentación completa para patentamiento"
-    },
-    "precio_eur": null,
-    "colores": ["a elección"],
-    "link_oficial": "https://www.surcampers.uy/producto/lnea-100s-mactrail",
-    "imagen_carpeta": "mactrail-100s",
-    "completo": true
-  }
 ]

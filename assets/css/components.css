@@ -589,10 +589,31 @@
 /* Grid de cards */
 .productos__grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 340px));
+    grid-template-columns: repeat(3, minmax(0, 360px));
     gap: var(--space-6);
     margin-top: var(--space-10);
     justify-content: center;
+}
+
+.productos__cta {
+    text-align: center;
+    margin-top: var(--space-16);
+}
+
+.productos__cta .btn {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #0a0a0a;
+    letter-spacing: 0.04em;
+    transition: letter-spacing var(--duration-normal) var(--ease-out);
+}
+
+.productos__cta .btn:hover {
+    letter-spacing: 0.12em;
+}
+
+.productos__grid .product-card {
+    height: 100%;
 }
 
 /* Cards como links — reset de estilos de ancla */
@@ -676,7 +697,13 @@ a.product-card {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .productos__grid {
+        grid-template-columns: repeat(2, minmax(0, 360px));
+    }
+}
+
+@media (max-width: 640px) {
     .productos__grid {
         grid-template-columns: 1fr;
         gap: var(--space-5);
