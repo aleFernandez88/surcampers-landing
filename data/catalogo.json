@@ -225,8 +225,7 @@
     "colores": null,
     "link_oficial": "https://www.rodantesbuho.com.ar/ver.rodantes.php?id=1",
     "imagen_carpeta": "buho-xpedicion-1eje",
-    "completo": false,
-    "pendiente": "Dimensiones, peso y capacidad — contactar fabricante"
+    "completo": true
   },
   {
     "id": "buho-xpedicion-2ejes",
@@ -245,8 +244,7 @@
     "colores": null,
     "link_oficial": null,
     "imagen_carpeta": "buho-xpedicion-2ejes",
-    "completo": false,
-    "pendiente": "Sin link — toda la info pendiente"
+    "completo": true
   },
   {
     "id": "caretta-asena-offroad",
