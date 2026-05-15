@@ -3,28 +3,7 @@
    Detalle dinámico con tabs: Exterior / Interior / Equipamiento / Especificaciones
    ============================================================ */
 
-const TIPO_LABELS = {
-  motorhome:      'Motorhome',
-  'casa-rodante': 'Casa Rodante',
-  minicamper:     'Minicamper',
-  trailer:        'Trailer',
-  'food-truck':   'Food Truck',
-};
-
-const PLACEHOLDERS = {
-  julia:    'assets/img/galeria/galeria-1.jpg',
-  ilusion:  'assets/img/galeria/galeria-2.jpg',
-  buho:     'assets/img/galeria/galeria-3.jpg',
-  caretta:  'assets/img/galeria/galeria-4.jpg',
-  mactrail: 'assets/img/galeria/galeria-5.jpg',
-};
-
-const GALLERY_FALLBACKS = [
-  'assets/img/galeria/galeria-1.jpg',
-  'assets/img/galeria/galeria-2.jpg',
-  'assets/img/galeria/galeria-3.jpg',
-  'assets/img/galeria/galeria-4.jpg',
-];
+import { TIPO_LABELS, PLACEHOLDERS, GALLERY_FALLBACKS } from './utils.js';
 
 function imgSrc(u) {
   return `assets/img/unidades/${u.imagen_carpeta}/cover.jpg`;

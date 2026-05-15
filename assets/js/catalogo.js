@@ -3,21 +3,7 @@
    Renderiza el grid de unidades desde data/catalogo.json
    ============================================================ */
 
-const TIPO_LABELS = {
-  motorhome:      'Motorhome',
-  'casa-rodante': 'Casa Rodante',
-  minicamper:     'Minicamper',
-  trailer:        'Trailer',
-  'food-truck':   'Food Truck',
-};
-
-const PLACEHOLDERS = {
-  julia:    'assets/img/galeria/galeria-1.jpg',
-  ilusion:  'assets/img/galeria/galeria-2.jpg',
-  buho:     'assets/img/galeria/galeria-3.jpg',
-  caretta:  'assets/img/galeria/galeria-4.jpg',
-  mactrail: 'assets/img/galeria/galeria-5.jpg',
-};
+import { TIPO_LABELS, PLACEHOLDERS } from './utils.js';
 
 const ICON_PERSONAS = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round"

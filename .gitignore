@@ -7,6 +7,9 @@ Thumbs.db
 .idea/
 *.sublime-workspace
 
+# Claude Code
+.claude/
+
 # Dependencias (si en algún momento se usa npm)
 node_modules/
 

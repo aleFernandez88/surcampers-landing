@@ -1,7 +1,27 @@
 /* ============================================================
    SUR CAMPERS — UTILS.JS
-   Helpers generales reutilizables
+   Helpers generales reutilizables + constantes compartidas
    ============================================================ */
+
+export const TIPO_LABELS = {
+  motorhome:      'Motorhome',
+  'casa-rodante': 'Casa Rodante',
+  minicamper:     'Minicamper',
+};
+
+export const PLACEHOLDERS = {
+  julia:   'assets/img/galeria/galeria-1.jpg',
+  ilusion: 'assets/img/galeria/galeria-2.jpg',
+  buho:    'assets/img/galeria/galeria-3.jpg',
+  caretta: 'assets/img/galeria/galeria-4.jpg',
+};
+
+export const GALLERY_FALLBACKS = [
+  'assets/img/galeria/galeria-1.jpg',
+  'assets/img/galeria/galeria-2.jpg',
+  'assets/img/galeria/galeria-3.jpg',
+  'assets/img/galeria/galeria-4.jpg',
+];
 
 /**
  * Debounce: retrasa la ejecución de fn hasta que pasen `wait` ms
