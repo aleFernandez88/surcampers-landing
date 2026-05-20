@@ -857,7 +857,7 @@ a.product-card {
     }
 
     .step__number {
-        font-size: clamp(4rem, 20vw, 6rem);
+        font-size: clamp(3rem, 14vw, 5rem);
     }
 }
 
@@ -1195,7 +1195,7 @@ a.product-card {
     }
 
     .contacto__title {
-        font-size: var(--fs-3xl);
+        font-size: clamp(1.8rem, 7vw, 2.8rem);
     }
 }
 
@@ -1464,6 +1464,12 @@ a.product-card {
 
 @media (max-width: 1024px) {
     .unidades-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .catalogo-banner__title {
+        font-size: clamp(1.8rem, 7vw, 2.8rem);
+    }
 }
 
 @media (max-width: 600px) {
@@ -1883,6 +1889,12 @@ a.product-card {
     .unidad-gallery__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 768px) {
+    .unidad-detail-banner__title {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+}
+
 @media (max-width: 600px) {
     .unidad-tab-btn { padding: var(--space-3) var(--space-5); }
     .unidad-gallery__grid { grid-template-columns: repeat(2, 1fr); }
@@ -2006,6 +2018,10 @@ a.product-card {
     .concepto__inner {
         grid-template-columns: 1fr;
         gap: var(--space-10);
+    }
+
+    .concepto__title {
+        font-size: clamp(1.8rem, 7vw, 2.8rem);
     }
 
     .concepto__media {
