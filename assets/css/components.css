@@ -1295,6 +1295,25 @@ a.product-card {
     color: var(--color-text-muted);
 }
 
+.footer__dev {
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+}
+
+.footer__dev a {
+    color: var(--color-bg-base);
+    background: var(--color-accent);
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.footer__dev a:hover {
+    background: var(--color-accent-hover);
+}
+
 .footer__socials {
     display: flex;
     align-items: center;
