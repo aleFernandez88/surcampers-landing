@@ -32,22 +32,67 @@
     <link rel="stylesheet" href="assets/css/components.css" />
 
     <!-- Librerías CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting.css"
+    />
+    <script
+      src="https://unpkg.com/splitting/dist/splitting.min.js"
+      defer
+    ></script>
   </head>
 
   <body>
     <div id="preloader" class="preloader" aria-hidden="true">
       <div class="preloader__inner">
-        <img src="assets/img/icons/logo-blanco.png" alt="" class="preloader__logo" />
-        <svg class="preloader__ring preloader__ring--outer" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <circle cx="50" cy="50" r="46" stroke="#C89020" stroke-width="1.5" stroke-dasharray="72 217" stroke-linecap="round"/>
+        <img
+          src="assets/img/icons/logo-blanco.png"
+          alt=""
+          class="preloader__logo"
+        />
+        <svg
+          class="preloader__ring preloader__ring--outer"
+          viewBox="0 0 100 100"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="46"
+            stroke="#C89020"
+            stroke-width="1.5"
+            stroke-dasharray="72 217"
+            stroke-linecap="round"
+          />
         </svg>
-        <svg class="preloader__ring preloader__ring--inner" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <circle cx="50" cy="50" r="46" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="50 239" stroke-linecap="round"/>
+        <svg
+          class="preloader__ring preloader__ring--inner"
+          viewBox="0 0 100 100"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="46"
+            stroke="rgba(255,255,255,0.2)"
+            stroke-width="1"
+            stroke-dasharray="50 239"
+            stroke-linecap="round"
+          />
         </svg>
       </div>
     </div>
@@ -59,8 +104,14 @@
         </a>
 
         <ul class="navbar__links" role="list">
-          <li><a href="unidades.html" class="navbar__link navbar__link--active">Unidades</a></li>
-          <li><a href="/#equipamiento" class="navbar__link">Equipamiento</a></li>
+          <li>
+            <a href="unidades.html" class="navbar__link navbar__link--active"
+              >Unidades</a
+            >
+          </li>
+          <li>
+            <a href="/#equipamiento" class="navbar__link">Equipamiento</a>
+          </li>
           <li><a href="/#galeria" class="navbar__link">Galería</a></li>
           <li><a href="/#contacto" class="navbar__link">Contacto</a></li>
         </ul>
@@ -90,17 +141,31 @@
     </nav>
 
     <!-- Menú móvil -->
-    <nav class="navbar__mobile-menu" id="mobileMenu" aria-label="Menú móvil" aria-hidden="true">
-      <a href="unidades.html" class="navbar__mobile-link" data-mobile-link>Unidades</a>
-      <a href="/#equipamiento" class="navbar__mobile-link" data-mobile-link>Equipamiento</a>
-      <a href="/#galeria" class="navbar__mobile-link" data-mobile-link>Galería</a>
-      <a href="/#contacto" class="navbar__mobile-link" data-mobile-link>Contacto</a>
+    <nav
+      class="navbar__mobile-menu"
+      id="mobileMenu"
+      aria-label="Menú móvil"
+      aria-hidden="true"
+    >
+      <a href="unidades.html" class="navbar__mobile-link" data-mobile-link
+        >Unidades</a
+      >
+      <a href="/#equipamiento" class="navbar__mobile-link" data-mobile-link
+        >Equipamiento</a
+      >
+      <a href="/#galeria" class="navbar__mobile-link" data-mobile-link
+        >Galería</a
+      >
+      <a href="/#contacto" class="navbar__mobile-link" data-mobile-link
+        >Contacto</a
+      >
       <a
         href="https://wa.me/59896247661"
         class="btn btn-primary btn-whatsapp"
         target="_blank"
         rel="noopener noreferrer"
-      >WhatsApp</a>
+        >WhatsApp</a
+      >
     </nav>
 
     <main>
@@ -108,14 +173,19 @@
       <section class="catalogo-banner" aria-label="Catálogo de unidades">
         <div
           class="catalogo-banner__bg"
-          style="background-image: url('assets/img/hero/hero-2.jpg')"
+          style="
+            background-image: url(&quot;assets/img/unidades/portada/Yosemite-1359.jpg&quot;);
+          "
           aria-hidden="true"
         ></div>
         <div class="catalogo-banner__overlay" aria-hidden="true"></div>
         <div class="container catalogo-banner__content js-fade-up">
           <span class="eyebrow">Sur Campers Uruguay</span>
           <h1 class="catalogo-banner__title">Nuestras<br />unidades</h1>
-          <p class="catalogo-banner__count">Descubre la libertad sobre ruedas: encuentra el vehículo perfecto para cada estilo de aventura.</p>
+          <p class="catalogo-banner__count">
+            Descubre la libertad sobre ruedas: encuentra el vehículo perfecto
+            para cada estilo de aventura.
+          </p>
         </div>
       </section>
 
@@ -166,10 +236,15 @@
                 </div>
                 <span class="contacto__card-arrow" aria-hidden="true">→</span>
               </a>
-              <a href="mailto:surcampersuruguay@gmail.com" class="contacto__card">
+              <a
+                href="mailto:surcampersuruguay@gmail.com"
+                class="contacto__card"
+              >
                 <div class="contacto__card-meta">
                   <span class="contacto__card-label">Email</span>
-                  <span class="contacto__card-value">surcampersuruguay@gmail.com</span>
+                  <span class="contacto__card-value"
+                    >surcampersuruguay@gmail.com</span
+                  >
                 </div>
                 <span class="contacto__card-arrow" aria-hidden="true">→</span>
               </a>
@@ -195,35 +270,97 @@
           <div>
             <p class="footer__col-title">Unidades</p>
             <ul class="footer__col-links" role="list">
-              <li><a href="unidad.html?id=ilusion-590-premium" class="footer__col-link">Ilusion 590 XMK</a></li>
-              <li><a href="unidad.html?id=ilusion-695-premium" class="footer__col-link">Ilusion 695 XMK</a></li>
-              <li><a href="unidad.html?id=ilusion-730-premium" class="footer__col-link">Ilusion 730 XMK</a></li>
+              <li>
+                <a
+                  href="unidad.html?id=ilusion-590-premium"
+                  class="footer__col-link"
+                  >Ilusion 590 XMK</a
+                >
+              </li>
+              <li>
+                <a
+                  href="unidad.html?id=ilusion-695-premium"
+                  class="footer__col-link"
+                  >Ilusion 695 XMK</a
+                >
+              </li>
+              <li>
+                <a
+                  href="unidad.html?id=ilusion-730-premium"
+                  class="footer__col-link"
+                  >Ilusion 730 XMK</a
+                >
+              </li>
             </ul>
           </div>
 
           <div>
             <p class="footer__col-title">Empresa</p>
             <ul class="footer__col-links" role="list">
-              <li><a href="/#nosotros" class="footer__col-link">Nosotros</a></li>
+              <li>
+                <a href="/#nosotros" class="footer__col-link">Nosotros</a>
+              </li>
               <li><a href="/#galeria" class="footer__col-link">Galería</a></li>
-              <li><a href="/#contacto" class="footer__col-link">Contacto</a></li>
+              <li>
+                <a href="/#contacto" class="footer__col-link">Contacto</a>
+              </li>
             </ul>
           </div>
 
           <div>
             <p class="footer__col-title">Seguinos</p>
             <div class="footer__col-socials">
-              <a href="https://www.instagram.com/surcampersuruguay" class="footer__col-social-link footer__col-social-link--instagram" target="_blank" rel="noopener" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <a
+                href="https://www.instagram.com/surcampersuruguay"
+                class="footer__col-social-link footer__col-social-link--instagram"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
               </a>
-              <a href="https://www.facebook.com/surcampersuruguay" class="footer__col-social-link footer__col-social-link--facebook" target="_blank" rel="noopener" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <a
+                href="https://www.facebook.com/surcampersuruguay"
+                class="footer__col-social-link footer__col-social-link--facebook"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
               </a>
-              <a href="https://www.youtube.com/channel/UCq6CkRAGlOwI_99VpWw1szw" class="footer__col-social-link footer__col-social-link--youtube" target="_blank" rel="noopener" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <a
+                href="https://www.youtube.com/channel/UCq6CkRAGlOwI_99VpWw1szw"
+                class="footer__col-social-link footer__col-social-link--youtube"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
               </a>
-              <a href="https://www.threads.com/@surcampersuruguay" class="footer__col-social-link footer__col-social-link--threads" target="_blank" rel="noopener" aria-label="Threads">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.851 1.205 8.604.024 12.185 0h.014c2.747.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 9.258c.98-1.454 2.568-2.227 4.476-2.227h.044c3.196.018 5.096 1.987 5.312 5.388.26.12.514.247.76.382 1.601.86 2.676 2.149 3.024 3.632.49 2.044-.194 4.486-2.212 6.485-1.862 1.842-4.142 2.66-7.162 2.682z"/></svg>
+              <a
+                href="https://www.threads.com/@surcampersuruguay"
+                class="footer__col-social-link footer__col-social-link--threads"
+                target="_blank"
+                rel="noopener"
+                aria-label="Threads"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.851 1.205 8.604.024 12.185 0h.014c2.747.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 9.258c.98-1.454 2.568-2.227 4.476-2.227h.044c3.196.018 5.096 1.987 5.312 5.388.26.12.514.247.76.382 1.601.86 2.676 2.149 3.024 3.632.49 2.044-.194 4.486-2.212 6.485-1.862 1.842-4.142 2.66-7.162 2.682z"
+                  />
+                </svg>
               </a>
             </div>
           </div>
@@ -231,10 +368,14 @@
 
         <div class="footer__bottom">
           <p class="footer__copy">
-            © <span id="footerYear"></span> Sur Campers Uruguay. Todos los derechos reservados.
+            © <span id="footerYear"></span> Sur Campers Uruguay. Todos los
+            derechos reservados.
           </p>
           <p class="footer__dev">
-            Sitio desarrollado por <a href="https://wa.me/54377441666" target="_blank" rel="noopener">Ale Fernández</a>
+            Sitio desarrollado por
+            <a href="https://wa.me/54377441666" target="_blank" rel="noopener"
+              >Ale Fernández</a
+            >
           </p>
         </div>
       </div>

@@ -30,6 +30,7 @@ function tabExterior(u) {
   const d    = u.dimensiones;
 
   if (u.subtipo)          rows.push(['Subtipo',    u.subtipo]);
+  if (u.ejes?.length)     rows.push(['Configuración', u.ejes.join(' o ') + ' — a pedido']);
   if (u.base)             rows.push(['Base',       u.base]);
   if (d?.largo_cm)        rows.push(['Largo',      `${(d.largo_cm / 100).toFixed(2)} m`]);
   if (d?.ancho_cm)        rows.push(['Ancho',      `${(d.ancho_cm / 100).toFixed(2)} m`]);

@@ -81,14 +81,16 @@ function renderFilters(unidades) {
   const container = document.getElementById('catalogoFilters');
   if (!container) return;
 
-  const tipos = [...new Set(unidades.map(u => u.tipo))];
+  const FILTERS = [
+    { value: 'todos',        label: 'Todos' },
+    { value: 'motorhome',    label: 'Motorhome' },
+    { value: 'casa-rodante', label: 'Casa Rodante' },
+    { value: 'minicamper',   label: 'Minicampers' },
+  ];
 
-  const btns = [
-    `<button class="catalogo-filter active" data-filter="todos">Todos</button>`,
-    ...tipos.map(t =>
-      `<button class="catalogo-filter" data-filter="${t}">${TIPO_LABELS[t] || t}</button>`
-    ),
-  ].join('');
+  const btns = FILTERS.map((f, i) =>
+    `<button class="catalogo-filter${i === 0 ? ' active' : ''}" data-filter="${f.value}">${f.label}</button>`
+  ).join('');
 
   container.innerHTML = btns;
 

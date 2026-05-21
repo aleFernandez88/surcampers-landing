@@ -6,7 +6,7 @@
 export const TIPO_LABELS = {
   motorhome:      'Motorhome',
   'casa-rodante': 'Casa Rodante',
-  minicamper:     'Minicamper',
+  minicamper:     'Minicampers',
 };
 
 export const PLACEHOLDERS = {
